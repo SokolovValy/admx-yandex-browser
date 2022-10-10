@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<policyDefinitionResources revision="1.0" schemaVersion="1.0">
-  <!--yandex version: 104.0.5112.114-->
+<!--<policyDefinitionResources revision="1.0" schemaVersion="1.0">-->
+<policyDefinitionResources xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" revision="1.0" schemaVersion="1.0">a
+<!--yandex version: 104.0.5112.114-->
   <displayName/>
   <description/>
   <resources>
