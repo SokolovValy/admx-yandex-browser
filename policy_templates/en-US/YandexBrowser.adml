@@ -1,0 +1,2182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--yandex version: 108.0.5359.179-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Support Microsoft Windows 7 and latter versions</string>
+      <string id="SUPPORTED_WIN7_ONLY">Support only Microsoft Windows 7</string>
+      <string id="yandex">Yandex</string>
+      <string id="yandexbrowser_mandatory">Yandex Browser</string>
+      <string id="yandexbrowser_recommended">Yandex Browser: default settings (users can change)</string>
+      <string id="RemovedPolicies_group">Removed Policies</string>
+      <string id="TurboSettings">Turbo Mode</string>
+      <string id="TurboSettings_Explain">Determines the operation of the Turbo mode in Yandex.Browser without the possibility of changing this setting by users.
+- Disabled - Turbo mode is not available to the user in the settings and is not enabled in the browser under any circumstances.
+- Not Configured - the Turbo mode settings are determined by users or initial settings.</string>
+      <string id="TurboSettings_TurboSettingsOff">Turbo mode is always off</string>
+      <string id="DisabledPlugins">List of disabled plug-ins</string>
+      <string id="DisabledPlugins_Explain">DisabledPlugins
+
+Sets a list of plugins that should be disabled in Yandex Browser, and prohibits users from changing it.
+To replace individual characters or their sequences, you can use wildcards: an asterisk (*) and a question mark (?). An asterisk replaces any number of characters, and a question mark corresponds to one character or its absence. To enter an asterisk character or a question mark as such, add a backslash (\) in front of it.
+
+- Enabled - the specified plugins are blocked in Yandex Browser and marked as disabled on the about:plugins page. Users cannot enable them. Please note that the Disabled Plugins and DisabledPluginsExceptions policies take precedence over this policy.
+- Not Configured - users can use any installed plugins, except for obviously incompatible, outdated and malicious ones.</string>
+      <string id="DisabledPluginsDesc">List of disabled plug-ins</string>
+      <string id="ExtensionInstallBlacklist">Configure the Extension Blacklist</string>
+      <string id="ExtensionInstallBlacklist_Explain">ExtensionInstallBlacklist
+
+Determines which extensions users cannot install. Extensions that are already installed will be removed if their policy prohibits them. If you specify "*" in the ExtensionInstallBlacklist, users will be able to install only the extensions listed in the ExtensionInstallWhitelist. The extension IDs must be separated by commas.</string>
+      <string id="ExtensionInstallBlacklistDesc">Configure the Extension Blacklist</string>
+      <string id="ExtensionInstallWhitelist">Configure the Extension Whitelist</string>
+      <string id="ExtensionInstallWhitelist_Explain">ExtensionInstallWhitelist
+
+Determines which extensions users can install. The policy is valid if the blacklist (ExtensionInstallBlacklist) contains "*". The extension IDs must be separated by commas.</string>
+      <string id="ExtensionInstallWhitelistDesc">Configure the Extension Whitelist</string>
+      <string id="DefaultPluginsSetting">Default Plugins Settings</string>
+      <string id="DefaultPluginsSetting_Explain">DefaultPluginsSetting
+
+Allows you to specify whether sites are allowed to run plugins automatically. The automatic launch of plugins can be allowed or prohibited for all sites.
+Click-through playback allows plug-ins to run, but for this the user must click on the plug-in.
+If these rules are not set, the Allow Plugins parameter will be used and the user will be able to change it.</string>
+      <string id="DefaultPluginsSetting_AllowPlugins">Allow autoplay Flash plugins</string>
+      <string id="DefaultPluginsSetting_BlockPlugins">Block Flash plugins</string>
+      <string id="DefaultPluginsSetting_ClickToPlay">Click to play</string>
+      <string id="AllowOutdatedPlugins">Allow Outdated Plugins</string>
+      <string id="AllowOutdatedPlugins_Explain">If the policy is enabled, the browser runs outdated plugins as normal. If the policy is disabled, the browser does not use such plugins and does not request permission to run them. If the policy is not set, the browser each asks the user if the outdated plugin can be used.</string>
+      <string id="SecureWifiEnabled">Manage the functionality of secure Wi-Fi</string>
+      <string id="SecureWifiEnabled_Explain">SecureWifiEnabled
+
+- Enabled, Not Configured - the user chooses whether to use secure Wi-Fi by clicking the icon in the SmartBox or the link in the browser notification.
+- Disabled - the user does not see notifications, and traffic in open Wi-Fi networks is not proxied through Yandex servers.</string>
+      <string id="URLBlacklist">Block access to the URL list</string>
+      <string id="URLBlacklist_Explain">Blocks users' access to blacklisted web pages.
+URL templates and local file address templates can be specified in the list. Templates for local files have the format "file://path", and the path must be absolute. All files whose path starts with the specified prefix are blocked.
+The format of the URL template is "scheme://host: port/path".
+If there is such a scheme, then only it is blocked. If the prefix scheme:// is not specified, all paths with all protocols (http, https, ftp, etc.) are blocked.
+The name or IP address of the host must be specified. By default, all its subdomains are blocked. To avoid this, add a dot (.) before the host name. If there is a * symbol in the schema, all domains are blocked.
+You can also specify the number of the forbidden port (from 1 to 65535). If the number is not specified, all ports are blocked.
+If a path is specified, only addresses with the appropriate prefix are blocked.
+Exceptions can be set in the URLWhitelist policy. It should contain no more than 1000 URLs, the rest of the addresses will be ignored.
+ATTENTION, blocking internal URLs with the prefix browser:// and chrome://* is not recommended. This may cause unexpected errors.
+- Not Configured - the browser will not block any URLs.</string>
+      <string id="URLBlacklistDesc">Block access to the URL list</string>
+      <string id="URLWhitelist">Sets a list of exceptions for blocked URLs</string>
+      <string id="URLWhitelist_Explain">URLWhitelist
+
+Configure exceptions from the blacklist set by the URLBlacklist policy.
+For example, if an asterisk (*) is indicated in the blacklist, all addresses will be blocked. But using the URLWhitelist policy, you can allow access to individual URLs by adding individual protocols, domains, subdomains, ports, or URLs to the exceptions.
+The white list takes precedence over the black list.
+The list can contain up to 1000 entries, all subsequent ones are ignored.
+If the policy is not set, there will be no exceptions from the blacklist.
+The format of the entry is given in the description of the URLBlacklist policy.</string>
+      <string id="URLWhitelistDesc">List of URLs blocked by the URLBlacklist policy</string>
+      <string id="DeprecatedPolicies_group">Outdated policies</string>
+      <string id="SafeBrowsingEnabled">Enable SafeBrowsing</string>
+      <string id="SafeBrowsingEnabled_Explain">SafeBrowsingEnabled
+
+Prohibition of disabling the SafeBrowsing function by users.
+- Enabled, SafeBrowsing will always be active, in addition, users will not be able to disable it in the browser settings themselves.
+- Disabled, Not Configured - then Safe Browsing will be enabled, but users will be able to turn it off in the settings.</string>
+      <string id="AutoFillEnabled">Allow autofill</string>
+      <string id="AutoFillEnabled_Explain">AutoFillEnabled
+Enables the autofill function in Yandex Browser and allows users automatically fill out web forms, for example, with address fields or bank card number. If the policy is disabled, the autofill feature is not available to users. If the policy is enabled or not configured, the user can use autofill, configure autofill profiles, and enable and disable autofill at their discretion.</string>
+      <string id="SigninAllowed">Allow login to Yandex Browser</string>
+      <string id="SigninAllowed_Explain">SigninAllowed
+
+The policy is outdated. Sync Disabled is recommended instead.
+Allows you to prohibit or allow users to log in to Yandex.Browser.
+- Enabled - authorization will be allowed.
+- Disabled - authorization will be prohibited, but applications and extensions using the chrome.identity API will not be able to work. Therefore, instead of SigninAllowed, it is recommended to use SyncDisabled.
+
+Do not enable this policy if the YandexDisableID policy is enabled. YandexDisableID disables the SigninAllowed ('False') policy.</string>
+      <string id="ProxyMode">Choose the proxy server configuration method</string>
+      <string id="ProxyMode_Explain">ProxyMode
+
+Allows you to set a proxy server for Yandex.Browser and prohibit users from changing its settings.
+If you decide not to use a proxy server, the remaining parameters will be ignored.
+If you select a system or auto-detected proxy server, the remaining parameters will be ignored.
+To configure the proxy server manually, specify its parameters in the "Proxy server address or URL" and "List of rules for ignoring the proxy server" fields. ARC applications will only have access to the HTTP proxy server with the highest priority.
+If you need to use a PAC script, specify its URL in the line "URL of the proxy PAC file".
+If you enable this setting, Yandex.Browser and ARC applications will ignore all proxy server parameters set from the command line.
+If the policy is not set, other users will be able to change the proxy server themselves.</string>
+      <string id="ProxyMode_ProxyDisabled">Never use a proxy server</string>
+      <string id="ProxyMode_ProxyAutoDetect">Automatically detect proxy server settings</string>
+      <string id="ProxyMode_ProxyPacScript">Use the PACK script for the proxy server</string>
+      <string id="ProxyMode_ProxyFixedServers">Use fixed proxy servers</string>
+      <string id="ProxyMode_ProxyUseSystem">Use the proxy server system settings</string>
+      <string id="ProxyServer">Proxy Server</string>
+      <string id="ProxyServer_Explain">ProxyServer
+
+Specifies the proxy server URL.
+It is valid only if manual configuration is specified in the section "Choose a proxy server configuration method".
+If another mode is enabled, do not enable this policy.</string>
+      <string id="ProxyPacUrl">URL of the proxy PAC file</string>
+      <string id="ProxyPacUrl_Explain">ProxyPacUrl
+
+Specifies the URL of the proxy server's PAC file.
+It is valid if manual configuration is specified in the section "Choose a proxy server configuration method".
+If another mode is enabled, do not enable this policy.</string>
+      <string id="ProxyBypassList">Rules for ignoring proxy servers</string>
+      <string id="ProxyBypassList_Explain">ProxyBypassList
+
+Yandex Browser will ignore proxy servers from this list.
+It is valid if you have specified manual proxy server configuration in the section "Choose a proxy server configuration method".
+If another mode is selected, do not enable this policy.</string>
+      <string id="DeveloperToolsDisabled">Disable Developer Tools</string>
+      <string id="DeveloperToolsDisabled_Explain">DeveloperToolsDisabled
+
+Disables Developer Tools and the JavaScript console. 
+
+- Enabled - Developer Tools are unavailable, sites cannot be analyzed with their help, and all keyboard shortcuts that control Developer Tools and the JavaScript console are disabled. 
+- Disabled, Not Configured - the Developer Tools and the JavaScript Console can be used.</string>
+      <string id="URLIExplorerList">List of URLs that will open in Microsoft Internet Explorer</string>
+      <string id="URLIExplorerList_Explain">URLIExplorerList
+
+The policy sets a list of URLs that automatically open in Internet Explorer if it is installed. Exceptions to this policy are set by the URLNonIExplorerList policy.
+
+- Not Configured, Disabled — all sites open in Yandex Browser.
+- Enabled — URLs from the list open in Internet Explorer.
+
+Example of a value:
+example.com
+https://ssl.server.com</string>
+      <string id="URLIExplorerListDesc">List of URLs that will open in Microsoft Internet Explorer</string>
+      <string id="URLNonIExplorerList">List of URLs that should not be opened in Microsoft Internet Explorer</string>
+      <string id="URLNonIExplorerList_Explain">URLNonIExplorerList
+
+The policy sets a list of exceptions for the URLIExplorerList policy.
+
+- Not Configured, Disabled — exceptions for the URLIExplorerList policy do not apply.
+- Enabled — URLs from the exclusion list do not open automatically in Internet Explorer.
+
+Example of a value:
+ya.ru
+https://mail.yandex.ru/</string>
+      <string id="URLNonIExplorerListDesc">List of URLs that should not be opened in Microsoft Internet Explorer</string>
+      <string id="NtpContentDisabled">Disable infotainment content on a new tab</string>
+      <string id="NtpContentDisabled_Explain">NtpContentDisabled
+
+The policy disables infotainment content on a new Browser tab.
+
+- Not Configured, Disabled — the display of content on a new tab is controlled by the Browser settings.
+- Enabled — infotainment content is disabled on a new tab.</string>
+      <string id="AllowFileSelectionDialogs">Allow file selection dialogs</string>
+      <string id="AllowFileSelectionDialogs_Explain">AllowFileSelectionDialogs
+
+The policy allows or prohibits displaying the file selection window in Yandex Browser.
+
+- Not Configured, Enabled — users can open a file selection window (import bookmarks or passwords, upload files, save links, etc.) and save the file using the context menu.
+- Disabled — the file selection window is not displayed, users cannot save a file from the context menu.</string>
+      <string id="AlternateErrorPagesEnabled">Allow alternate Error pages</string>
+      <string id="AlternateErrorPagesEnabled_Explain">AlternateErrorPagesEnabled
+
+The policy uses alternative error pages like "Page not found" in Yandex Browser and prohibits users from changing this parameter.
+
+- Not Configured — alternative pages are used, users can disable them.
+- Enabled — alternative pages are used, users can disable them.
+- Disabled — alternative pages are not used, users can enable them.</string>
+      <string id="AlternativeBrowserParameters">Set command line parameters for another browser</string>
+      <string id="AlternativeBrowserParameters_Explain">AlternativeBrowserParameters
+
+The policy sets command line parameters for another browser.
+
+- Not configured, Disabled — only URL is passed as a command line parameter.
+- Enabled — the administrator sets a list of strings, each of them is passed to another browser as a separate command line parameter. In Windows, parameters are combined by spaces. In macOS and Linux, the parameter itself can contain spaces and at the same time be processed as a whole.
+
+If you use environment variables, their values are substituted. In Windows, the expression %ABC% is replaced by the value of the ABC environment variable. In macOS and Linux, the expression ${ABC} is replaced by the value of the ABC environment variable.
+
+If the parameter contains the variable ${url}, it is replaced by the URL of the opened page. If there is no ${url} variable in any parameter, the desired URL is added at the end of the command line.
+
+Example of a value:
+-foreground
+-new-window
+${url}
+-profile
+%HOME%\browser_profile</string>
+      <string id="AlternativeBrowserParametersDesc">Set command line parameters for another browser</string>
+      <string id="AlternativeBrowserPath">Set command line parameters for another browser</string>
+      <string id="AlternativeBrowserPath_Explain">AlternativeBrowserPath
+
+The policy defines the command which  should open pages in another browser.
+
+- Not Configured, Disabled — pages are opened in the default browser: in Windows — in Edge, in macOS — in Safari. This feature is not available on Linux.
+- Enabled — the administrator can choose the browser in which the pages will be opened on command.
+
+You can specify the file path or values: ${ie}, ${firefox}, ${safari}, ${opera}, ${edge}. If you set the path to the file as a value, the specified file will be processed as executable. The value ${ie} is available only for Windows, and the values ${safari} and ${edge} are available for Windows and macOS.
+
+Code example: ${ie}</string>
+      <string id="AlwaysOpenPdfExternally">Disable viewing PDF files in Yandex Browser</string>
+      <string id="AlwaysOpenPdfExternally_Explain">AlwaysOpenPdfExternally
+
+The policy disables viewing PDF files in Yandex Browser.
+
+- Not Configured — users can view PDF files in Yandex Browser.
+- Enabled — downloaded PDF files are opened in the default application, users cannot open PDF files in Yandex Browser.
+- Disabled — downloaded PDF files are opened in Yandex Browser if the corresponding plugin is enabled.</string>
+      <string id="ApplicationLocaleValue">Define locale value</string>
+      <string id="ApplicationLocaleValue_Explain">ApplicationLocaleValue
+
+The policy sets the interface language in Yandex Browser.
+
+- Not Configured, Disabled — the OS language is used.
+- Enabled — administrator sets the interface language.
+
+To change the language in the Browser, you need to restart it.
+
+Example value:
+en</string>
+      <string id="AudioCaptureAllowed">Allow audio capture</string>
+      <string id="AudioCaptureAllowed_Explain">AudioCaptureAllowed
+
+The policy allows or prohibits pages from capturing audio from devices on the user's computer.
+
+- Not Configured, Enabled — if the page tries to access audio devices, users see a request for access permission.
+For URLs from the AudioCaptureAllowedUrls policy, access to audio devices is granted without a request.
+- Disabled — audio capture is only allowed for URLs from the AudioCaptureAllowedUrls policy. Access to audio devices is provided to these pages automatically, without displaying a request to users.
+
+This policy applies to all audio devices, not only for the built-in microphone.</string>
+      <string id="AudioCaptureAllowedUrls">Allow audio capture for certain URLs</string>
+      <string id="AudioCaptureAllowedUrls_Explain">AudioCaptureAllowedUrls
+
+The policy sets a list of URLs for which access to audio capture is allowed automatically, even if it is prohibited by the AudioCaptureAllowed policy.
+
+- Not Configured, Disabled — users specify for each URL whether to allow access to audio recording devices.
+- Enabled — the administrator sets a list of URLs for which access to audio recording devices is granted without a request. URL templates can be used.
+
+Examples of URL templates:
+https://www.example.com/
+https://[*.]example.edu/</string>
+      <string id="AudioCaptureAllowedUrlsDesc">The URLs permitted to use audio capture devices</string>
+      <string id="AuthNegotiateDelegateAllowlist">Allow to delegate authorization over Kerberos protocol on certain servers</string>
+      <string id="AuthNegotiateDelegateAllowlist_Explain">AuthNegotiateDelegateAllowlist
+
+The policy defines the list of Kerberos servers to transfer rights to.
+
+- Not Configured, Disabled — this list cannot be set. The browser does not transmit user credentials to servers, including on the Intranet.
+- Enabled — you can specify a list of servers that are allowed to delegate rights over the Kerberos protocol.
+
+Example of a value:
+*.example.com,example.com
+Wildcards (*) are allowed.</string>
+      <string id="AuthSchemes">Set authentication schemes</string>
+      <string id="AuthSchemes_Explain">AuthSchemes
+
+The policy specifies which HTTP authentication schemes Yandex Browser supports.
+
+- Not Configured, Disabled — all four schemes are used.
+- Enabled — the administrator can list the schemes separated by commas.
+
+Available schemes:
+- basic;
+- digest;
+- ntlm;
+- negotiate.
+
+Example of a value: basic,digest,ntlm,negotiate</string>
+      <string id="AuthServerAllowlist">Allow authorization on servers</string>
+      <string id="AuthServerAllowlist_Explain">AuthServerAllowlist
+
+The policy defines a list of servers (including proxy servers) for which sso login will be enabled by default.
+
+- Not Configured, Disabled — this list cannot be set. The browser responds to authentication requests only after determining whether the server is on the Intranet. If the server is on the Internet, the browser ignores incoming requests from it.
+- Enabled — you can specify a list of servers where sso is enabled by default.
+
+Example of a value:
+*.example.com,example.com</string>
+      <string id="AutoOpenAllowedForURLs">Set the URL list for the AutoOpenFileTypes policy</string>
+      <string id="AutoOpenAllowedForURLs_Explain">AutoOpenAllowedForURLs
+
+The policy sets the URL list for the Auto Open File Types policy. The policy does not apply to the automatic opening parameters set by users.
+
+- Not Configured, Disabled — format files from the AutoOpenFileTypes policy are opened automatically on any sites.
+- Enabled — downloaded files are opened automatically if the URL is in the list and the file format is specified in the AutoOpenFileTypes policy.
+
+You can view URL templates in the Help: https://yandex.ru/support/browser-corporate/policy/url-patterns.html .
+
+Example of a value:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="AutoOpenAllowedForURLsDesc">Set the URL list for the AutoOpenFileTypes policy</string>
+      <string id="AutoOpenFileTypes">Define file types automatically opened after downloading</string>
+      <string id="AutoOpenFileTypes_Explain">AutoOpenFileTypes
+
+The policy specifies the file formats that will be automatically opened after downloading.
+
+- Not Configured, Disabled — files of formats selected by users in the context menu of the downloaded file are automatically opened (for example, More-&gt;Open JPG automatically).
+- Enabled — automatically opens files of the formats that the administrator has listed in the policy. The file format is specified without a separator (dot), for example "txt".
+
+Example of a value:
+exe txt
+
+If Safe Browsing is enabled, files will be scanned for malware during the download process regardless of whether the policy is enabled. Unverified files will not be opened.</string>
+      <string id="AutoOpenFileTypesDesc">Automatically open files of the following types</string>
+      <string id="AutoSelectCertificateForUrls">Set sites for which the browser can select a client certificate automatically</string>
+      <string id="AutoSelectCertificateForUrls_Explain">AutoSelectCertificateForUrls
+
+The policy sets a list of URLs for which the browser can select the client certificate automatically.
+
+- Not configured, Disabled — automatic certificate selection is prohibited on the all sites.
+- Enabled — the administrator sets a list of URL templates and client certificate filters.
+
+The value is an array of JSON dictionaries converted to strings. Each dictionary should have the form { "template": "$URL_PATTERN", "filter" : $FILTER }, where $URL_PATTERN is a template for content settings. $The FILTER defines a set of client certificates from which the browser automatically selects the necessary one. Regardless of the filter settings, only certificates that match the server request are selected.
+
+Examples of using the $FILTER fragment:
+
+- If $FILTER has the form { "ISSUER": { "CN": "$ISSUER_CN" } }, only client certificates issued by a certificate with the common name $ISSUER_CN are selected.
+- If the $FILTER contains both the "ISSUER" and "SUBJECT" fragments, only client certificates that meet both conditions are selected.
+- If the $FILTER contains a "SUBJECT" fragment with the value "O", only a certificate in which at least one organization name corresponds to the specified value can be selected.
+- If the $FILTER contains a fragment "SUBJECT" with the value "OU", only a certificate can be selected in which at least one name of the organization's department corresponds to the specified value.
+- If $FILTER contains empty brackets {}, the choice of certificates is not further limited. At the same time, the web server filters are still applied.
+
+Example of a value:
+
+{
+  "pattern": "https://www.example.com",
+  "filter": {
+    "ISSUER": {
+      "CN": "certificate issuer name",
+      "L": "certificate issuer location",
+      "O": "certificate issuer org",
+      "OU": "certificate issuer org unit"
+    },
+    "SUBJECT": {
+      "CN": "certificate subject name",
+      "L": "certificate subject location",
+      "O": "certificate subject org",
+      "OU": "certificate subject org unit"
+    }
+  }
+}</string>
+      <string id="AutoSelectCertificateForUrlsDesc">Automatically select client certificates for sites</string>
+      <string id="AutofillAddressEnabled">Allow address autofill</string>
+      <string id="AutofillAddressEnabled_Explain">AutofillAddressEnabled
+
+The policy allows users to autofill addresses.
+
+- Not Configured, Enabled — address autocomplete is enabled.
+- Disabled — address autofill is disabled, the entered addresses are not saved.</string>
+      <string id="AutofillCreditCardEnabled">Allow credit cards autofill</string>
+      <string id="AutofillCreditCardEnabled_Explain">AutofillCreditCardEnabled
+
+The policy allows users to autofill credit cards.
+
+- Not Configured, Enabled — users are offered to autofill credit card data.
+- Disabled — users are not offered to autofill credit card details. The credit card data that users indicate on the sites will not be saved.</string>
+      <string id="AutoplayAllowed">Allow video autoplay</string>
+      <string id="AutoplayAllowed_Explain">AutoplayAllowed
+
+The policy allows automatic video playback.
+
+- Enabled - Media files are played automatically.
+- Disabled, Not Configured - Autoplay is disabled.
+
+By default, media files are not played automatically. For some URL templates, this behavior can be overridden using the AutoplayAllowlist policy.
+
+If the policy was changed while the browser was running, it will only apply to new tabs.</string>
+      <string id="AutoplayAllowlist">Allow video autoplay on  the URLs from the Allowlist</string>
+      <string id="AutoplayAllowlist_Explain">AutoplayAllowlist
+
+The policy allows videos to be played automatically on pages from the white list of URL templates.
+- Enabled - videos with a sound track will be played automatically (without the user's consent). The policy will not work if the Autoplay Allowed policy is enabled.
+- Disabled - Video autoplay will be allowed for all URL templates specified in the AutoplayAllowlist policy.
+
+If the AutoplayAllowlist policy has been changed while the browser is running, it will only apply to new tabs.
+
+Example of a value:
+https://www.example.com
+[*.]example.edu</string>
+      <string id="AutoplayAllowlistDesc">Allow video autoplay on the URLs from the Allowlist</string>
+      <string id="BackgroundModeEnabled">Enable Browser to work in Background mode</string>
+      <string id="BackgroundModeEnabled_Explain">BackgroundModeEnabled
+
+The policy allows or disables background mode.
+
+- Not Configured — Background mode is disabled, the user can enable it in the browser settings.
+- Enabled — Background mode is enabled, the user cannot disable it in the browser settings.
+- Disabled — Background mode is disabled, the user cannot disable it in the browser settings.
+
+In the background, processes, applications and the current browser session remain active after the last Yandex Browser window is closed. All cookies saved during the session also remain active. The browser itself is restarted at the same time.
+
+The background process icon is displayed in the system tray.</string>
+      <string id="BasicAuthOverHttpEnabled">Allow Basic authentication when connecting via HTTP</string>
+      <string id="BasicAuthOverHttpEnabled_Explain">BasicAuthOverHttpEnabled
+
+The policy allows Basic authentication when connecting via HTTP.
+
+- Not Configured, Enabled — Basic authentication requests are allowed to be received over the insecure HTTP protocol.
+- Disabled — Basic authentication requests can only be received over the secure HTTPS protocol.
+
+The policy does not work if the AuthSchemes  policy prohibits the use of Basic authentication.</string>
+      <string id="BlockExternalExtensions">Block external extensions</string>
+      <string id="BlockExternalExtensions_Explain">BlockExternalExtensions
+
+The policy controls the installation of external extensions.
+
+- Not Configured, Disabled — installation of external extensions is allowed.
+- Enabled — installation of external extensions is prohibited.</string>
+      <string id="BookmarkBarEnabled">Enable or disable Bookmark bar</string>
+      <string id="BookmarkBarEnabled_Explain">BookmarkBarEnabled
+
+- Not Configured — users decide whether to enable or disable the bookmarks bar.
+- Enabled — the bookmarks bar is displayed in the browser, users cannot hide it.
+- Disabled — the bookmarks bar is not displayed, users cannot turn it on.</string>
+      <string id="BrowserSwitcherEnabled">Open the specified pages in another browser</string>
+      <string id="BrowserSwitcherEnabled_Explain">BrowserSwitcherEnabled
+
+The policy allows or prohibits opening the specified pages in another browser. To configure the function, the policies of the "Other Browser" group are used.
+
+- Not Configured, Disabled — Yandex Browser does not open the pages specified by the administrator in another browser.
+- Enabled — Yandex Browser opens the pages specified by the administrator in another browser, unless prohibited by other policies.</string>
+      <string id="BrowserSwitcherUrlList">Set sites that will open in another browser</string>
+      <string id="BrowserSwitcherUrlList_Explain">BrowserSwitcherUrlList
+
+The policy sets a list of URLs that should be opened in another browser.
+
+- Not Configured, Disabled — the list is empty.
+- Enabled — the administrator sets a list of URLs that should be opened in another browser.
+
+Policy application:
+
+The policy processes each URL from the list separately.
+
+The exclamation mark before the URL inverts the rule: given with ! the addresses will not open in another browser.
+
+When a link matches several URLs from the list, the most specific value is applied. For example, the list contains addresses ie.com and !open-in-browser.ie.com:
+
+- If users open the address http://open-in-browser.ie.com , then a more specific URL value will be applied — !open-in-browser.ie.com. It contains an inversion sign !, so the page will open in Yandex Browser.
+- If users open the address http://ie.com , then the first rule will apply, and the site will open in another browser.
+
+The sites specified in the policy are displayed on the browser://browser-switch/internals page.
+
+When the sites specified in the policy are opened in Internet Explorer, the Yandex Browser policies cease to apply to them and the Internet Explorer rules begin to apply.
+
+Example of a value:
+
+ie.com
+!open-in-browser.ie.com
+foobar.com/ie-only/</string>
+      <string id="BrowserSwitcherUrlListDesc">Specify URLs for opening in another browser</string>
+      <string id="BrowsingDataLifetime">Configure automatic deletion of user data</string>
+      <string id="BrowsingDataLifetime_Explain">BrowsingDataLifetime
+
+The policy sets up automatic deletion of user data in Yandex Browser.
+
+The administrator sets when the browser will delete certain types of information:
+
+- 'browsing_history',
+- 'download_history',
+- 'cookies_and_other_site_data',
+- 'cached images and_files',
+- 'login password',
+- 'autofill',
+- 'site_settings',
+- 'hosted_app_data'.
+
+The browser automatically deletes the data specified by the administrator if it is stored for longer than the specified period. Minimum shelf life: 1 hour. The data is deleted in 15 seconds after the browser is started, then once an hour.
+
+Example of a value:
+
+[
+  {
+    "time_to_live_in_hours": 24,
+    "data_types": [
+      "browsing_history"
+    ]
+  },
+  {
+    "time_to_live_in_hours": 12,
+    "data_types": [
+      "password_signin",
+      "autofill"
+    ]
+  }
+]</string>
+      <string id="ClearBrowsingDataOnExitList">Delete working data after closing the browser</string>
+      <string id="ClearBrowsingDataOnExitList_Explain">ClearBrowsingDataOnExitList
+
+The policy sets a list of user data that is deleted after closing all browser windows. The policy only works if the SyncDisabled policy is enabled.
+
+- Not Configured, Disabled — user data is not deleted after closing all browser windows.
+- Enabled — the administrator sets which user data is deleted after closing all browser windows.
+
+Types of data to delete:
+
+- history (browsing_history);
+- downloads (download_history);
+- cookies and other website data (cookies_and_other_site_data);
+- cache (cached_images_and_files);
+- autofill data;
+- passwords (password_signin);
+- site settings (site_settings);
+- application data (hosted_app_data).
+
+If the policy is configured at the platform level, it is necessary to disable synchronization for the entire platform. If the policy is configured at the user level, it works only if synchronization is disabled for him.
+
+If Yandex Browser closes unexpectedly (for example, due to a malfunction), user data is deleted the next time the profile is loaded.
+
+Example of a value:
+
+browsing_history
+download_history
+cookies_and_other_site_data
+cached_images_and_files
+password_signin
+autofill
+site_settings
+hosted_app_data</string>
+      <string id="ClearBrowsingDataOnExitListDesc">Specify data to delete after closing the browser</string>
+      <string id="CloudDocumentsDisabled">Prohibit to open office format files in the browser</string>
+      <string id="CloudDocumentsDisabled_Explain">CloudDocumentsDisabled
+
+The policy prohibits users from opening office format files in the browser.
+
+- Not Configured, Disabled — users can open office format files in the browser.
+- Enabled — users are not allowed to open office format files in the browser.</string>
+      <string id="CookiesAllowedForUrls">Allow cookies for the URLs</string>
+      <string id="CookiesAllowedForUrls_Explain">CookiesAllowedForUrls
+
+Allows you to set a list of URL templates for sites that are allowed to save cookies.
+
+Values:
+- Disabled — the user determines in the settings which sites will be allowed to save cookies.
+- Not Configured — the value of the DefaultCookiesSetting policy will be used for all sites, provided that it is set. If not specified, the user determines in the settings which sites will be allowed to save cookies.
+- Enabled — the administrator sets a list of URL templates in the parameters. Only sites from this list will be allowed to save cookies. The user will not be able to change this value.
+
+   - If the URL template is allowed in the settings (browser://settings/content/cookies/allow), and cookies are prohibited for it in the policy, priority is given to the policy.
+   - If the URL pattern occurs in multiple policies, the following priority applies: CookiesBlockedForUrls is higher than CookiesSessionOnlyForUrls, and CookiesSessionOnlyForUrls is higher than CookiesAllowedForUrls.
+
+Learn more about URL templates: https://yandex.ru/support/browser-corporate/policy/url-patterns.html . The * wildcard is not supported for this policy.
+
+Examples of URL templates:
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CookiesAllowedForUrlsDesc">Allow cookies on the URLs</string>
+      <string id="CookiesBlockedForUrls">Block cookies for the URLs</string>
+      <string id="CookiesBlockedForUrls_Explain">CookiesBlockedForUrls
+
+Allows you to set a list of URL templates for sites that are prohibited from storing cookies.
+
+- Not Configured — the DefaultCookiesSetting policy value will be used for all sites, provided that it is set. If not specified, users determine in the settings which sites will be prohibited from storing cookies.
+- Enabled — the administrator sets a list of URL templates in the parameters. Only sites from this list will be prohibited from storing cookies. Users will not be able to change this value.
+- Disabled — users determine in the settings which sites will be prohibited from storing cookies.
+
+
+- If the URL template is blocked in the settings (browser://settings/content/cookies/block), and cookies are allowed for it in the policy, priority is given to the policy.
+- If the URL pattern occurs in multiple policies, the following priority applies: CookiesBlockedForUrls is higher than CookiesSessionOnlyForUrls, and CookiesSessionOnlyForUrls is higher than CookiesAllowedForUrls.
+
+Learn more about URL templates: https://yandex.ru/support/browser-corporate/policy/url-patterns.html . The identifier * is supported only with brackets: [*].
+
+Examples of URL templates:
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CookiesBlockedForUrlsDesc">Block cookies on the URLs</string>
+      <string id="CookiesSessionOnlyForUrls">Allow cookies for session only for the URLs</string>
+      <string id="CookiesSessionOnlyForUrls_Explain">CookiesSessionOnlyForUrls
+
+The policy allows you to store cookies for sites from the list during the session and delete them after it ends.
+
+- Not Configured — the DefaultCookiesSetting policy value will be used for all sites, provided that it is set. If not specified, the user determines in the settings which sites will be allowed to save cookies only for the duration of the session. If the URL is not in the template lists, the default values will also apply for it.
+- Enabled — administrator sets a list of URL templates in the parameters. Only sites from this list will be allowed to save cookies during the session. The user will not be able to change this value.
+- Disabled — user determines in the settings which sites will be allowed to save cookies only during the session.
+
+- If the URL template in the settings is allowed only for the session (browser://settings/content/cookies/sessionOnly), and cookies are allowed or prohibited for it in the policy, priority is given to the policy.
+- If the URL pattern occurs in multiple policies, the following priority applies: CookiesBlockedForUrls is higher than CookiesSessionOnlyForUrls, and CookiesSessionOnlyForUrls is higher than CookiesAllowedForUrls.
+
+Learn more about URL templates: https://yandex.ru/support/browser-corporate/policy/url-patterns.html . The identifier * is supported only with brackets: [*].
+
+Examples of URL templates:
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CookiesSessionOnlyForUrlsDesc">Allow cookies for session only for the URLs</string>
+      <string id="CrashesReporting">Allow Yandex Browser crash reporting</string>
+      <string id="CrashesReporting_Explain">CrashesReporting
+
+The policy includes anonymous sending of crash reports to Yandex Browser and prohibits users from changing its parameters. The policy only works inside the domain.
+
+- Not Configured — sending reports to Yandex is determined by the default Browser settings, users can prohibit or allow sending reports in the Browser settings.
+- Enabled — crash reports are sent to Yandex, users cannot prohibit it.
+- Disabled — sending reports to Yandex is prohibited, users cannot allow sending reports to Yandex.</string>
+      <string id="DefaultBrowserSettingEnabled">Allow to set default browser</string>
+      <string id="DefaultBrowserSettingEnabled_Explain">DefaultBrowserSettingEnabled
+
+Configures the default browser check in Yandex Browser and prohibits users from changing this parameter. 
+
+- Enabled, Yandex Browser always checks at startup whether it is the default browser, and if possible automatically registers itself as such. 
+- Disabled, Yandex Browser does not check whether it is the default browser and does not allow the user to configure this parameter. 
+- Not Configured, Yandex Browser allows the user to control the default browser check and display of appropriate alerts.</string>
+      <string id="DefaultCookiesSetting">Default cookies settings</string>
+      <string id="DefaultCookiesSetting_Explain">DefaultCookiesSetting
+
+The policy allows you to allow or prohibit the storage of local data. Cookies are used for authorization, and browser synchronization will not work if they are disabled. You can set a policy for all sites.
+
+- Not Configured — cookies are allowed, the user cannot prohibit the installation of cookies.
+- Disabled — the policy is not loaded (the policy is not displayed on the browser://policy/ page).
+- Enabled — administrator can determine the mode of policy application, users cannot change these settings:
+    - Prohibit websites from saving data to your computer.
+    - Allow all sites to save local data.
+    - Store cookies until the end of the session (when Yandex Browser is running in the background, the session does not end even after all windows are closed).</string>
+      <string id="DefaultCookiesSetting_AllowCookies">Allow cookies for all sites</string>
+      <string id="DefaultCookiesSetting_BlockCookies">Block cookies on all sites</string>
+      <string id="DefaultCookiesSetting_SessionOnly">Allow all sites save cookies only for session</string>
+      <string id="DefaultGeolocationSetting">Default Geolocation Settings</string>
+      <string id="DefaultGeolocationSetting_Explain">DefaultGeolocationSetting
+
+The policy allows or prohibits sites from tracking the user's location.
+
+- Not Configured, Disabled — sites can request permission to determine the user's location, users can change this setting.
+- Enabled — the administrator specifies one of the values that users cannot change:
+    - Prohibit sites from tracking users' location.
+    - Allow sites to track users' location.
+    - Ask if the site is trying to track the location of users.</string>
+      <string id="DefaultGeolocationSetting_AllowGeolocation">Allow all sites use geolocation</string>
+      <string id="DefaultGeolocationSetting_BlockGeolocation">Block geolocation on sites</string>
+      <string id="DefaultGeolocationSetting_AskGeolocation">Ask user permission when site try use geolocation</string>
+      <string id="DefaultJavaScriptSetting">Configure sites to run JavaScript</string>
+      <string id="DefaultJavaScriptSetting_Explain">DefaultJavaScriptSetting
+
+The policy allows or prohibits sites from executing JavaScript.
+
+- Not Configured — sites run JavaScript, users can change this parameter.
+- Enabled — the administrator allows or prohibits sites to execute JavaScript. Users cannot change this setting.
+- Disabled — sites run JavaScript, users cannot change this parameter.</string>
+      <string id="DefaultJavaScriptSetting_AllowJavaScript">Allow sites to run JavaScript</string>
+      <string id="DefaultJavaScriptSetting_BlockJavaScript">Prohibit sites to execute JavaScript</string>
+      <string id="DefaultPopupsSetting">Default Pop-up Window Settings</string>
+      <string id="DefaultPopupsSetting_Explain">DefaultPopupsSetting
+
+The policy allows or prohibits pop-ups on all sites.
+
+- Not Configured, Disabled — pop-ups are blocked on all sites, users can allow or block pop-ups in the Browser settings.
+- Enabled — the administrator defines the mode of policy application:
+    - Block pop-ups on all websites.
+    - Allow pop-up windows to open on all sites.
+    Users cannot allow or block pop-ups in the Browser settings.</string>
+      <string id="DefaultPopupsSetting_AllowPopups">Allow pop-up windows on all sites</string>
+      <string id="DefaultPopupsSetting_BlockPopups">Block pop-ups on all sites</string>
+      <string id="DefaultWebAppsPolicy">Set default path for a file with pre-installed web applications</string>
+      <string id="DefaultWebAppsPolicy_Explain">DefaultWebApplicationPolicy
+
+The policy specifies the path to the file with the list of pre-installed web applications.
+
+- Not configured, disabled — no pre-installed web applications.
+- Enabled — the administrator sets the path to a file with a list of pre-installed web applications on a separate server.
+
+A web application is a website that you can open in a separate window and work with it as a separate program. It is convenient for messengers, mail services, video conferences. For more information, see the Help: https://yandex.ru/support/browser/personalization/web-app.html .
+
+An example of web applications using JSON can be found in the Help: https://yandex.ru/support/browser-corporate/policy/default-web-apps-policy.html#default-web-apps-policy__json-example
+
+Example of a value:
+https://domain.example/path/to/web_app/config/config.json</string>
+      <string id="DeniedFluteBrowserButtons">Disable buttons on the sidebar</string>
+      <string id="DeniedFluteBrowserButtons_Explain">DeniedFluteBrowserButtons
+
+The policy defines the available toolbar buttons on the sidebar.
+
+- Not Configured, Disabled — all buttons are available to users.
+- Enabled — the administrator sets buttons that are not available on the sidebar.
+
+Example of a value:
+
+history
+bookmarks
+notes
+music
+bell
+tab_manager
+portal_login
+screenshot</string>
+      <string id="DeniedFluteBrowserButtonsDesc">Disable left panel tools buttons</string>
+      <string id="DeveloperToolsAvailability">Set restrictions on the use of developer tools</string>
+      <string id="DeveloperToolsAvailability_Explain">DeveloperToolsAvailability
+
+The policy restricts the use of developer tools.
+
+- Not Configured, Disabled — developer tools and JavaScript console are prohibited only for extensions restricted by corporate policy.
+- Enabled — the administrator specifies one of the parameters:
+     - Prohibit the use of developer tools.
+     - Prohibit the use of developer tools in relation to extensions installed in accordance with corporate policy, and allow in all other cases.
+     - Allow the use of developer tools.</string>
+      <string id="DeveloperToolsAvailability_DeveloperToolsDisallowedForForceInstalledExtensions">Prohibit the use of developer tools with respect to extensions installed in accordance with corporate policy, and allow in all other cases</string>
+      <string id="DeveloperToolsAvailability_DeveloperToolsAllowed">Allow the use of developer tools</string>
+      <string id="DeveloperToolsAvailability_DeveloperToolsDisallowed">Prohibit the use of developer tools</string>
+      <string id="Disable3DAPIs">Disable 3DAPIs</string>
+      <string id="Disable3DAPIs_Explain">Disable3DAPIs
+
+The policy prohibits using the three-dimensional graphics API in Yandex Browser.
+
+- Not Configured, Disabled — to access the 3D graphics API, you need to pass command-line arguments.
+- Enabled — pages are prohibited from using the WebGL API, and plugins are prohibited from using the Pepper 3D API if the HardwareAccelerationModeEnabled policy is disabled.</string>
+      <string id="DisableAuthNegotiateCnameLookup">Disable CNAME record search when requesting Kerberos authentication</string>
+      <string id="DisableAuthNegotiateCnameLookup_Explain">DisableAuthNegotiateCnameLookup
+
+The policy disables the search for a CNAME record when requesting Kerberos authentication.
+
+- Not Configured, Disabled — the CNAME record search determines the canonical server name when creating the Kerberos SPN.
+- Enabled — the CNAME record is not searched. The server name entered when creating the Kerberos SPN is used.</string>
+      <string id="DisableSafeBrowsingProceedAnyway">Block the transition from the Safe Browsing warning page</string>
+      <string id="DisableSafeBrowsingProceedAnyway_Explain">DisableSafeBrowsingProceedAnyway
+
+The policy enables or disables the "Ignore this Warning" button on the warning page about the site threatening computer security. If the button is disabled, users cannot go to the dangerous page.
+
+- Not Configured, Disabled — there is the "Ignore this warning" button on the warning page.
+- Enabled — there is no "Ignore this warning" button on the warning page.</string>
+      <string id="DisableScreenshots">Prohibit the creation of screenshots in the Browser</string>
+      <string id="DisableScreenshots_Explain">DisableScreenshots
+
+The policy prohibits users from taking screenshots using the browser and extensions.
+
+- Not Configured — users can take screenshots using the browser and API extensions, enable and disable this feature in the settings.
+- Enabled — users cannot take screenshots using the browser and API extensions and enable this feature in the settings.
+- Disabled — users can take screenshots using the browser and extension API and cannot disable this feature in the settings.</string>
+      <string id="DiskCacheDir">Select a cache folder on disk</string>
+      <string id="DiskCacheDir_Explain">DiskCacheDir
+
+The policy sets the cache folder on the disk.
+
+- Not Configured, Disabled — Yandex Browser uses the default folder, but users can change it using the --disk-cache-dir parameter.
+- Enabled — Yandex Browser stores the cache on disk in the folder specified by the administrator. Users cannot change it using the --disk-cache-dir parameter.
+
+Yandex Browser manages the contents of the cache folder, so do not specify the root folder or a folder that is used for other purposes in the policy. This will avoid data loss and other errors.</string>
+      <string id="DiskCacheSize">Set the cache size in bytes</string>
+      <string id="DiskCacheSize_Explain">DiskCacheSize
+
+The policy sets the cache size in bytes. The value is used by various subsystems in the Browser as a reference. Therefore, the actual amount of disk space used may exceed the specified value, but will have the same order.
+
+- Not Configured, Disabled — the browser uses the default cache size. Users can change the cache size using the --disk-cache-size parameter.
+- Enabled — the administrator sets the maximum cache size in bytes. Values less than a few megabytes are rounded up. For example, 104857600 is 100 MB. Users cannot change the cache size using the --disk-cache-size parameter.</string>
+      <string id="DistrStatisticsReporting">Enable the collection of statistics on Browser installations and deletions</string>
+      <string id="DistrStatisticsReporting_Explain">DistrStatisticsReporting
+
+The policy includes collecting statistics about Browser installations and removals. The request is sent when installing and uninstalling the Browser, and additionally once a day. The policy only works inside the domain.
+
+- Not Configured, Enabled — statistics collection is enabled.
+- Disabled — statistics collection is disabled.</string>
+      <string id="DnscryptDisabled">Disable DNSCrypt</string>
+      <string id="DnscryptDisabled_Explain">DnscryptDisabled
+
+The policy disables DNSCrypt. The Browser uses DNSCrypt technology as part of the comprehensive Protect protection, which protects users from intercepting and spoofing DNS requests. The policy only works inside the domain.
+
+- Not Configured, Disabled — the default behavior is used, users can enable encryption of DNS queries using DNSCrypt in the Browser settings.
+- Enabled — DNS query encryption using DNSCrypt is disabled, users cannot enable it in the Browser settings.</string>
+      <string id="DownloadDirectory">Set a folder for downloads</string>
+      <string id="DownloadDirectory_Explain">DownloadDirectory
+
+The policy specifies the folder where the browser saves downloaded files.
+
+- Not Configured, Disabled — the browser downloads files to the default folder, and users can change it.
+- Enabled — the administrator sets the folder for downloading files. This folder is used even if user has specified his own folder to save or has selected a checkbox that allows to select a folder each time a file is uploaded.
+
+Example of a value: /home/${user_name}/Downloads</string>
+      <string id="DownloadRestrictions">Configure restrictions for downloads</string>
+      <string id="DownloadRestrictions_Explain">DownloadRestrictions
+
+The policy restricts file downloads.
+
+- Not Configured, Disabled — the browser uses the default settings.
+- Enabled — the administrator sets restrictions for downloads that users cannot change:
+- No restrictions (by default).
+- Block the download of malware and dangerous files — it is recommended only for departments and users whose work does not suffer from false positive blockings.
+- Block the download of malicious, unusual, unwanted and dangerous files — it is recommended only for departments and users whose work does not suffer from false positive blockings.
+- Block all downloads — it is recommended to use only in special cases.
+- Block malicious file downloads (recommended) — known malicious files are blocked, potentially dangerous file types are not blocked.
+
+The restrictions do not apply to loading the currently open page and saving it in PDF format from the print window.
+
+Learn more about how Protect technology checks files when downloading in the Help: https://yandex.ru/support/browser/security/file-checking.html .</string>
+      <string id="DownloadRestrictions_DefaultDownloadSecurity">No restrictions (default)</string>
+      <string id="DownloadRestrictions_BlockDangerousDownloads">Block the download of malware and dangerous files</string>
+      <string id="DownloadRestrictions_BlockPotentiallyDangerousDownloads">Block the download of malicious, unusual, unwanted and dangerous files</string>
+      <string id="DownloadRestrictions_BlockAllDownloads">Block all the downloads</string>
+      <string id="DownloadRestrictions_BlockMaliciousDownloads">Block malicious file downloads (recommended)</string>
+      <string id="EditBookmarksEnabled">Enable the ability to change bookmarks</string>
+      <string id="EditBookmarksEnabled_Explain">EditBookmarksEnabled
+
+Enables or disables the ability to change bookmarks in Yandex Browser.
+
+- Not Configured, Enabled — users can add, modify and delete bookmarks.
+- Disabled — users cannot add, modify, or delete bookmarks. Users' bookmarks, created before the policy disabling, will remain available.</string>
+      <string id="Education">Enable education</string>
+      <string id="Education_Explain">Education
+
+The policy enables or disables educational balloons in Yandex Browser.
+
+- Not Configured, Enabled — education is enabled.
+- Disabled — education is disabled.</string>
+      <string id="ExtensionInstallAllowlist">Configure the list of allowed extensions</string>
+      <string id="ExtensionInstallAllowlist_Explain">ExtensionInstallAllowList
+
+The policy sets exceptions from the list of prohibited extensions of the ExtensionInstallBlocklist policy.
+
+- Not Configured, Disabled — the list of allowed extensions is empty, administrator cannot add the extension to the allowed list.
+- Enabled — administrator sets the list of allowed extensions.
+
+The policy is valid if the list of prohibited extensions of the ExtensionInstallBlocklist policy contains *. Extension IDs in the allowed list are separated by commas.
+
+Example of a value:
+extension_id1
+extension_id2</string>
+      <string id="ExtensionInstallAllowlistDesc">Configure the list of allowed extensions</string>
+      <string id="ExtensionInstallBlocklist">Configure the Extension Blacklist</string>
+      <string id="ExtensionInstallBlocklist_Explain">ExtensionInstallBlocklist
+
+The policy allows the creation of a blocklist of extensions.
+
+- Not Configured, Disabled — users can install any extensions.
+- Enabled — administrator can set a blocklist of extensions, users cannot install extensions from the blocklist, at the time of enabling the policy, previously installed extensions from the blocklist are disabled, after excluding extensions from the blocklist are enabled automatically.
+
+* disables all extensions except those that are whitelisted by the ExtensionInstallAllowlist policy.
+
+Example of a value:
+extension_id1
+extension_id2</string>
+      <string id="ExtensionInstallBlocklistDesc">Configure the Extension Blacklists</string>
+      <string id="ExtensionInstallForcelist">Set a list of applications and extensions to be installed forcibly</string>
+      <string id="ExtensionInstallForcelist_Explain">ExtensionInstallForcelist
+
+The policy sets a list of applications and extensions that are installed forcibly without user intervention. Users cannot delete or disable them.
+
+- Not Configured, Disabled — applications and extensions are not installed automatically, users can delete any applications and extensions from the Yandex Browser.
+- Enabled — the applications and extensions specified in the list are automatically installed. Users cannot delete or disable them.
+
+Policy features:
+- The policy does not operate in Incognito mode. To disable Incognito mode, use the IncognitoModeAvailability policy. The policy only works inside the domain.
+- After enabling the policy, permissions are granted for the enterprise.deviceAttributes and enterprise.platformKeys API extensions. These APIs are not available for applications and extensions that are not forcibly installed.
+- The policy takes precedence over the ExtensionInstallBlocklist policy. If you remove a forcibly installed application or extension from the ExtensionInstallForcelist policy list, Yandex Browser will automatically delete it if it is in the ExtensionInstallBlocklist policy list.
+- If the DeveloperToolsAvailability policy allows the use of developer tools, then users can change the code of forcibly installed extensions. This may cause the browser to malfunction.
+- Extensions are installed at the URL specified in the policy. If the URL is not specified, the default is the URL of the Chrome online store https://clients2.google.com/service/update2/crx . Then the URL from the extension manifest is used for updating.
+- Each line specified in the policy specifies the extension identifier and may contain the URL for installing the extension (the path to the .crx file may be specified), separated by a semicolon. Example: extension_id1; update_url.
+
+Example of a value:
+
+mbniclmhobmnbdlbpiphghaielnnpgdp
+bfbmjmiodbnnpllbbbfblcplfjjepjdn</string>
+      <string id="ExtensionInstallForcelistDesc">Set a list of applications and extensions that are installed forcibly</string>
+      <string id="ExtensionSettings">Manage extension settings</string>
+      <string id="ExtensionSettings_Explain">ExtensionSettings
+
+The policy controls the settings of extensions in Yandex Browser. Replaces any other extension configuration policies. The policy only works inside the domain.
+
+- Disabled, not configured — users can configure extensions themselves.
+- Enabled — extension settings are set by the administrator using the code specified in the policy settings.
+     - The extension ID or update URL is linked to only one specific setting.
+     - The identifier * applies to all extensions for which a separate configuration is not specified in the policy.
+     - If the update URL is specified, the specified configuration is applied to all extensions whose manifest contains this URL.
+     - If the experimental override_update_url parameter is set to true, the extension will be installed and updated using the update URL specified in the ExtensionInstallForcelist policy or in the update_url field of the ExtensionSettings policy.
+
+Example of a value:
+
+{
+  "abcdefghijklmnopabcdefghijklmnop": {
+    "installation_mode": "allowed",
+    "blocked_permissions": [
+      "history"
+    ],
+    "minimum_version_required": "1.0.1",
+    "toolbar_pin": "force_pinned"
+  },
+  "bcdefghijklmnopabcdefghijklmnopa": {
+    "installation_mode": "force_installed",
+    "update_url": "https://example.com/update_url",
+    "allowed_permissions": [
+      "downloads"
+    ],
+    "runtime_blocked_hosts": [
+      "*://*.example.com"
+    ],
+    "runtime_allowed_hosts": [
+      "*://good.example.com"
+    ]
+  },
+  "cdefghijklmnopabcdefghijklmnopab": {
+    "installation_mode": "blocked",
+    "blocked_install_message": "Custom error message."
+  },
+  "defghijklmnopabcdefghijklmnopabc,efghijklmnopabcdefghijklmnopabcd": {
+    "installation_mode": "blocked",
+    "blocked_install_message": "Custom error message."
+  },
+  "update_url:https://www.example.com/update.xml": {
+    "blocked_permissions": [
+      "wallpaper"
+    ],
+    "allowed_permissions": [
+      "downloads"
+    ],
+    "installation_mode": "allowed"
+  },
+  "fghijklmnopabcdefghijklmnopabcde": {
+    "installation_mode": "removed",
+    "blocked_install_message": "Custom removal message."
+  },
+  "ghijklmnopabcdefghijklmnopabcdef": {
+    "installation_mode": "force_installed",
+    "update_url": "https://example.com/update_url",
+    "override_update_url": true
+  },
+  "*": {
+    "installation_mode": "blocked",
+    "blocked_permissions": [
+      "downloads",
+      "bookmarks"
+    ],
+    "install_sources": [
+      "https://company-intranet/chromeapps"
+    ],
+    "allowed_types": [
+      "hosted_app"
+    ],
+    "runtime_blocked_hosts": [
+      "*://*.example.com"
+    ],
+    "runtime_allowed_hosts": [
+      "*://good.example.com"
+    ],
+    "blocked_install_message": "Custom error message."
+  }
+}</string>
+      <string id="FastSignup">Configure the reminder of synchronization</string>
+      <string id="FastSignup_Explain">FastSignup
+
+The policy controls the reminder to enable synchronization in the Browser.
+
+- Not Configured, Enabled — the reminder is shown after three Browser launches without synchronization.
+- Disabled — the reminder is not displayed.</string>
+      <string id="FullscreenAllowed">Allow Fullscreen Mode</string>
+      <string id="FullscreenAllowed_Explain">FullscreenAllowed
+
+The policy allows or prohibits the activation of fullscreen mode. In this mode, all elements of the Yandex Browser interface are hidden, and only the content of the site is displayed on the screen.
+
+- Not Configured, Enabled — Users can activate fullscreen mode, fullscreen mode can be activated by applications and extensions if they have permissions to do so.
+- Disabled — Fullscreen mode is disabled for all users, applications and extensions.</string>
+      <string id="HardwareAccelerationModeEnabled">Enable Hardware Acceleration Mode</string>
+      <string id="HardwareAccelerationModeEnabled_Explain">HardwareAccelerationModeEnabled
+
+The policy enables or disables hardware acceleration in Yandex Browser and prohibits users from changing this parameter.
+
+- Not Configured — hardware acceleration is used if it is supported by the device configuration, users can change this parameter.
+- Enabled — hardware acceleration is used if it is supported by the device configuration.
+- Disabled — hardware acceleration is disabled.</string>
+      <string id="HomepageLocation">Set Home Page</string>
+      <string id="HomepageLocation_Explain">HomepageLocation
+
+The policy sets the homepage URL. If a quick access page is set as the homepage, the policy will not work. The policy only works inside the domain.
+
+- Not Configured, Disabled — users can set the homepage URL themselves in the Browser settings.
+- Enabled — homepage  URL is set in the Browser. The homepage will open if the Browser was closed last time without tabs or by pressing Alt + Home. The URL should have a standard format (for example, http://example.com or https://example.com ).</string>
+      <string id="ImportBookmarks">Importing bookmarks from another browser</string>
+      <string id="ImportBookmarks_Explain">ImportBookmarks
+
+The policy allows or prohibits the import of bookmarks from the default browser.
+
+- Not Configured, Enabled — bookmarks are imported at the first launch (if possible). The user can import bookmarks at any time.
+- Disabled — import of bookmarks does not occur at the first launch and is not available to the user in the settings.</string>
+      <string id="ImportCookies">Importing cookies from another browser</string>
+      <string id="ImportCookies_Explain">ImportCookies
+
+The policy allows or prohibits the import of cookies from the default browser when you first launch Yandex Browser.
+
+- Not Configured, Enabled — cookies are imported at the first launch (if possible). Users can start importing cookies in the settings.
+- Disabled — cookies are not imported at the first launch. Users cannot start importing cookies in the settings.</string>
+      <string id="ImportExtensions">Importing extensions from another browser</string>
+      <string id="ImportExtensions_Explain">ImportExtensions
+
+The policy allows or prohibits the import of extensions from the default browser when you first launch Yandex Browser.
+
+- Not Configured, Enabled — extensions are imported when Yandex Browser is first launched (if possible). The user can start importing extensions in the settings.
+- Disabled — extensions are not imported at the first launch of Yandex Browser. The user cannot start importing extensions in the settings.</string>
+      <string id="ImportHistory">Importing history from another browser</string>
+      <string id="ImportHistory_Explain">ImportHistory
+
+The policy allows or prohibits importing browsing history from another browser.
+
+- Not Configured — the browsing history is imported at the first launch of Yandex Browser from the default browser, if it has this data. Users can import their browsing history from another browser at any time.
+- Enabled — the browsing history is automatically imported when importing any data. Users cannot disable this setting.
+- Disabled — the browsing history is not imported at the first launch of Yandex Browser. Users cannot import their browsing history at any time.</string>
+      <string id="ImportLastSession">Import open tabs from another browser</string>
+      <string id="ImportLastSession_Explain">ImportLastSession
+
+The policy allows or prohibits importing open tabs from another browser.
+
+- Not Configured — open tabs are imported at the first launch of Yandex Browser from the default browser, if it has this data. Users can import open tabs from another browser at any time.
+- Enabled — open tabs are automatically imported when importing any data. Users cannot disable this setting.
+- Disabled — open tabs are not imported at the first launch of Yandex Browser. Users cannot import open tabs at any time.</string>
+      <string id="ImportOnFirstRun">Automatic settings import on the first run of Browser</string>
+      <string id="ImportOnFirstRun_Explain">ImportOnFirstRun
+
+The policy allows or prohibits importing data from the default browser when you first launch Yandex Browser.
+
+- Not Configured, Enabled — data is imported at the first launch of Yandex Browser (if possible).
+- Disabled — data is not imported at the first launch of Yandex Browser.
+
+Data to import:
+- History;
+- Bookmarks;
+- Passwords;
+- Search engines;
+- Cookies;
+- Last open tabs.
+
+To learn more about importing from other browsers, see the Help: https://yandex.ru/support/browser/about/import.html#automatic .</string>
+      <string id="ImportOther">Importing additional settings from another browser</string>
+      <string id="ImportOther_Explain">ImportOther
+
+The policy allows or prohibits importing system settings from another browser.
+
+- Not Configured — system settings are imported at the first launch of Yandex Browser from the default browser, if it has this data. Users can import system settings from another browser at any time.
+- Enabled — system settings are automatically imported when importing any data. Users cannot disable this setting.
+- Disabled — system settings are not imported at the first launch of Yandex Browser. Users cannot import system settings at any time.</string>
+      <string id="ImportSavedPasswords">Importing saved passwords from another browser</string>
+      <string id="ImportSavedPasswords_Explain">ImportSavedPasswords
+
+The policy allows or prohibits importing saved passwords from another browser.
+
+- Not Configured — saved passwords are imported at the first launch of Yandex Browser from the default browser, if it has this data. Users can import saved passwords from another browser at any time.
+- Enabled — saved passwords are automatically imported when importing any data. Users cannot disable this setting.
+- Disabled — saved passwords are not imported at the first launch of Yandex Browser. Users cannot import saved passwords at any time.</string>
+      <string id="ImportSearchEngine">Import default search engine from another browser</string>
+      <string id="ImportSearchEngine_Explain">ImportSearchEngine
+
+The policy allows or prohibits importing the default search from another browser.
+
+- Not Configured — search engine settings are imported when Yandex Browser is first launched from the default browser, if it has this data. Users can import search engine settings from another browser at any time.
+- Enabled — search engine settings are automatically imported when importing any data. Users cannot disable this setting.
+- Disabled — search engine settings are not imported at the first launch of Yandex Browser. Users cannot import search engine settings from another browser at any time.</string>
+      <string id="IncognitoModeAvailability">Incognito Mode Availability</string>
+      <string id="IncognitoModeAvailability_Explain">IncognitoModeAvailability
+
+The policy determines whether users can enable Incognito mode.
+
+- Not Configured — users may open pages in Incognito mode.
+- Enabled — administrator sets the policy application mode:
+     - "Forced use of Incognito mode" — Incognito mode is always enabled.
+     - "Incognito mode is available" — users may view pages both in normal mode and in Incognito mode.
+     - "Incognito mode is disabled" — users may view pages only in normal mode.
+- Disabled — users may view pages only in normal mode.</string>
+      <string id="IncognitoModeAvailability_Enabled">Allow Incognito Mode</string>
+      <string id="IncognitoModeAvailability_Disabled">Disable Incognito Mode</string>
+      <string id="IncognitoModeAvailability_Forced">Forced use of Incognito mode</string>
+      <string id="InstaserpDisabled">Disable the context menu for selected text</string>
+      <string id="InstaserpDisabled_Explain">InstaserpDisabled
+
+The policy disables the context menu that pops up when text is selected on the page.
+
+- Not Configured — the context menu is shown, user can disable it in the settings.
+- Enabled — the context menu is not shown, user cannot enable it in the settings (the option "Show the Find and Copy buttons when selecting text" is inactive).
+- Disabled — the context menu is displayed, user cannot disable it in the settings.</string>
+      <string id="ManagedBookmarks">Managed Bookmarks</string>
+      <string id="ManagedBookmarks_Explain">ManagedBookmarks
+
+The policy allows you to create a list of required bookmarks. Users will not be able to change this list, but only hide them in the bookmark panel. Managed bookmarks are not synchronized with the user's account, and extensions cannot change them.
+
+- Not Configured, Disabled — the user manages bookmarks independently.
+- Enabled — the administrator creates the list of required bookmarks. Each of them is a dictionary, where the name and url keys correspond to the name of the bookmark and the URL of the site. The administrator can also create a subfolder for bookmarks specifying the children key with a list of nested bookmarks or folders as the value instead of the url key. Yandex Browser complements incomplete URLs in the same way as when they are entered in the address bar, for example, ya.ru will be converted to https://ya.ru /.
+By default, the folder is called "Managed Bookmarks". To change the name, you need to add a dictionary to the policy with a single key top level_name and the folder name as the value.
+
+Example of a value:
+[
+  {
+    "toplevel_name": "Corporate Bookmarks"
+  },
+  {
+    "name": "Yandex",
+    "url": "ya.ru"
+  },
+  {
+    "name": "Gosuslugi",
+    "url": "gosuslugi.ru"
+  },
+  {
+    "name": "My Organization",
+    "children": [
+      {
+        "name": "News",
+        "url": "news.my-org-site.ru"
+      },
+      {
+        "name": "HR",
+        "url": "hr.my-org-site.ru"
+      }
+    ]
+  }
+]</string>
+      <string id="MasterPasswordDisabled">Disable Master Password</string>
+      <string id="MasterPasswordDisabled_Explain">MasterPasswordDisabled
+
+The policy prohibits users from using master password.
+
+- Not Configured, Disabled — users can use the master password.
+- Enabled — master password is disabled.</string>
+      <string id="NewTabPageLocation">Set the URL opening instead of a new tab or a new window</string>
+      <string id="NewTabPageLocation_Explain">NewTabPageLocation
+
+The policy sets the URL of the page that opens instead of a new tab and prohibits users from changing this URL. The policy does not affect the creation of groups and the restoration of tabs after an error. The policy only works inside the domain. The policy does not work in Incognito mode.
+
+- Not Configured, Disabled — default settings are used.
+- Enabled — the administrator sets the URL of the page that opens instead of a new tab.
+
+By default, Yandex Browser uses the https scheme.
+
+Example of the value: https://ya.ru</string>
+      <string id="NewTabSessionOnStartup">Open a new tab when the Browser starts</string>
+      <string id="NewTabSessionOnStartup_Explain">NewTabSessionOnStartup
+
+When restarting, Browser can restore tabs and open the first screen at the same time. The policy controls this setting.
+
+- Not Configured — after restarting Browser restores all tabs and opens the first screen. Users can change this setting.
+- Enabled — after restarting Browser restores all tabs and opens the first screen. Users cannot change this setting.
+- Disabled — after restarting Browser restores all tabs and opens the last active tab. Users cannot change this setting.
+
+A new tab or the first screen opens:
+- at the very first launch of the Browser;
+- if there are no tabs in the Browser;
+- when you click the button to open a new tab.</string>
+      <string id="NtpAdsDisabled">Disable ads on a new tab</string>
+      <string id="NtpAdsDisabled_Explain">NtpAdsDisabled
+
+The policy allows you to disable ads on a new browser tab.
+
+- If the policy is not set or disabled, ads on a new tab are displayed according to the settings set in the browser.
+- If the policy is enabled, ads will not be displayed on the new tab.</string>
+      <string id="NtpNotificationsDisable">Disable notifications on NTP</string>
+      <string id="NtpNotificationsDisable_Explain">NtpNotificationsDisable
+
+The policy sets up notifications on the first screen.
+
+- Not Configured — notifications are enabled, users can disable them.
+- Enabled — notifications are disabled, users cannot enable them.
+- Disabled — notifications are enabled, users cannot disable them.
+
+The policy controls the settings on the browser://settings/ntpNotifications page.</string>
+      <string id="NtpWallpaper">Url for wallpaper image</string>
+      <string id="NtpWallpaper_Explain">Ntp Wallpaper
+
+The policy sets the background of the first screen (or the new tab page, or NTP).
+
+- Not Configured, Disabled — default settings are used for the first screen: classic view, background changes every day. Users can change these parameters.
+- Enabled — the administrator sets the path to the image for the background on the first screen, classic view, background doesn't change every day. Users cannot change these settings.
+
+Example of the value: https://domain.example/path/to/image/wallpaper.png</string>
+      <string id="PasswordManagerBlockedURLs">Set sites where the password manager is disabled</string>
+      <string id="PasswordManagerBlockedURLs_Explain">PasswordManagerBlockedURLs
+
+The policy sets a list of sites for which the password manager is disabled.
+
+- Not Configured, Disabled — users can use the password manager on any sites.
+- Enabled — the administrator sets a list of URL templates for which the password manager is disabled.
+
+Sample templates:
+example.com
+*.com
+*.acme.com
+*</string>
+      <string id="PasswordManagerBlockedURLsDesc">Set sites where the password manager is disabled</string>
+      <string id="PasswordManagerEnabled">Enable password saving</string>
+      <string id="PasswordManagerEnabled_Explain">PasswordManagerEnabled
+
+The policy allows you to save passwords in the Browser and automatically substitute them when logging in to sites.
+
+- Not Configured — the browser saves passwords. Users can enable and disable this setting.
+- Enabled — the browser saves passwords. Users cannot disable this setting.
+- Disabled — the browser does not save passwords. Users cannot enable password saving, but they can substitute passwords saved before disabling the policy into forms.</string>
+      <string id="PasswordProtectionChangePasswordURL">Configure the URL of the password change page</string>
+      <string id="PasswordProtectionChangePasswordURL_Explain">PasswordProtectionChangePasswordURL
+
+The policy allows you to specify the URL of the password change page.
+
+If the policy is enabled, it sets the URL of the page where users will change their password after a warning appears in the browser.
+
+If the policy is disabled or not set, users will be redirected to the default page to change their password.</string>
+      <string id="PasswordProtectionLoginURLs">Configure a list of corporate account login URLs where the password protection service should record hashes with salt for passwords</string>
+      <string id="PasswordProtectionLoginURLs_Explain">PasswordProtectionLoginURLs
+
+The policy allows you to set a list of corporate account login URLs (only for HTTP and HTTPS protocols). On these pages, the password protection service will record hashes with salt, so that they can then be used to determine the re-entry of passwords.
+Values:
+- Not Configured, Disabled. The user can log in to the corporate account at any URL.
+- Enabled. The administrator sets a list of URLs where the user can log in to the corporate account.
+
+Example of a value:
+https://mydomain.com/login.html
+https://login.mydomain.com</string>
+      <string id="PasswordProtectionLoginURLsDesc">Configure a list of corporate account login URLs where the password protection service should record hashes with salt for passwords</string>
+      <string id="PasswordProtectionWarningTrigger">The trigger at which a password protection warning will be received</string>
+      <string id="PasswordProtectionWarningTrigger_Explain">PasswordProtectionWarningTrigger
+
+The policy allows you to control the display of a warning from the browser about re-entering a protected password on a suspicious site.
+
+To specify which password should be monitored by the browser, use the Password Protection Log in URLs and PasswordProtectionChangePasswordURL policies.
+
+* If the PasswordProtectionWarningOff value is set, no warnings appear.
+* If the PasswordProtectionWarningOnPasswordReuse value is set, a browser warning appears when the user re-enters a protected password on a site that is not in the allowed list.
+* If the PasswordProtectionWarningOnPhishingReuse value is set, a browser warning appears when the user re-enters a protected password on a phishing site.
+
+If the value is not set, the browser will only control the protected passwords. Users can change this setting themselves.</string>
+      <string id="PasswordProtectionWarningTrigger_PasswordProtectionWarningOff">Password protection warnings are disabled</string>
+      <string id="PasswordProtectionWarningTrigger_PasswordProtectionWarningOnPasswordReuse">A password protection warning is triggered when the password is reused</string>
+      <string id="PasswordProtectionWarningTrigger_PasswordProtectionWarningOnPhishingReuse">A password protection warning is triggered when the password is reused on a phishing page</string>
+      <string id="PopupsAllowedForUrls">Allow pop-ups on the sites from the list</string>
+      <string id="PopupsAllowedForUrls_Explain">PopupsAllowedForUrls
+
+The policy sets a list of URL templates that are allowed to open pop-ups.
+
+- Not Configured, Disabled — user settings are used. If the DefaultPopupsSetting policy is set, the settings of this policy are used.
+- Enabled — administrator sets a list of URL templates that are allowed to open pop-ups.
+
+Learn more about URL templates: https://yandex.ru/support/browser-corporate/policy/url-patterns.html . The identifier * is supported only with brackets: [*].
+
+Example of a value:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PopupsAllowedForUrlsDesc">Allow pop-ups on the following sites</string>
+      <string id="PopupsBlockedForUrls">Block pop-ups on the sites from the list</string>
+      <string id="PopupsBlockedForUrls_Explain">PopupsBlockedForUrls
+
+The policy sets a list of URL templates that are prohibited from opening pop-ups.
+
+- Not Configured, Disabled — user settings are used. If the DefaultPopupsSetting policy is set, the settings of this policy are used.
+- Enabled — administrator sets a list of URL templates that are prohibited from opening pop-ups.
+
+Learn more about URL templates: https://yandex.ru/support/browser-corporate/policy/url-patterns.html . The identifier * is supported only with brackets: [*].
+
+Example of a value:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PopupsBlockedForUrlsDesc">Block popups for URLs</string>
+      <string id="ProxySettings">ProxySettings</string>
+      <string id="ProxySettings_Explain">ProxySettings
+
+The policy sets the proxy server settings for the Browser and ignores all proxy settings from the command line. The policy only works inside the domain.
+
+- Not Configured, Disabled — users can configure the proxy server.
+- Enabled — the administrator sets the proxy server settings:
+- the ProxyMode field sets the proxy server configuration mode and prohibits changing it. Possible values:
+     - direct — proxy server is never used, and the values of the other fields are ignored.
+     - system — the system settings of the proxy server are used, the values of the other fields are ignored.
+     - auto_detect — the values of the other fields are ignored.
+     - fixed_servers — the ProxyServer and ProxyBypassList fields are used.
+     - pac_script — the ProxyPacUrl, ProxyPacMandatory and ProxyBypassList fields are used.
+     - the ProxyPacUrl field specifies the URL of the proxy server's PAC file;
+     - the ProxyPacMandatory field prevents the network stack from returning to direct connections with an invalid or unavailable PAC script;
+     - the ProxyServer field specifies the proxy server URL;
+     - the ProxyBypassList field specifies a list of hosts for which the proxy server will be ignored.
+
+Example of value:
+{
+  "ProxyMode": "fixed_servers",
+  "ProxyServer": "123.123.123.123:8080",
+  "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/"
+}</string>
+      <string id="RefererEnabledOnFaviconRequests">Pass the Referer URL when requesting the Favicon of the site</string>
+      <string id="RefererEnabledOnFaviconRequests_Explain">RefererEnabledOnFaviconRequests
+
+The policy allows or prohibits transmitting the Referer URL when requesting a site favicon.
+
+- Not Configured, Enabled — when requesting a site favicon, the Referer URL is passed.
+- Disabled — Referer URL is not passed.</string>
+      <string id="RoamingProfileLocation">Set Roaming Profile location</string>
+      <string id="RoamingProfileLocation_Explain">RoamingProfileLocation
+
+The policy specifies the folder where the roaming copies of user profiles are stored. The policy only works if the RoamingProfileSupportEnabled policy is enabled.
+
+- Not Configured, Disabled — roaming copies of user profiles are stored in the default folder: %AppData%\Yandex\YandexBrowser\User Data\.
+- Enabled — administrator sets the folder where the roaming copies of user profiles are stored.
+
+You can use supported variables in the policy: https://yandex.ru/support/browser-corporate/policy/supported-variables.html</string>
+      <string id="RoamingProfileSupportEnabled">Allow Roaming Profile</string>
+      <string id="RoamingProfileSupportEnabled_Explain">RoamingProfileSupportEnabled
+
+The policy allows you to create roaming profiles.
+
+- Not Configured, Disabled — local profiles are used. Data exchange between devices occurs via synchronization, unless it is prohibited by the SyncDisabled policy.
+- Enabled — synchronization with the cloud is disabled, profile settings are saved in a separate file. The file is stored in a folder from the RoamingProfileLocation policy.</string>
+      <string id="SSLVersionMin">Set minimum SSL version</string>
+      <string id="SSLVersionMin_Explain">SSLVersionMin
+
+The policy controls using of SSL and TLS technologies.
+
+- Not Configured, Disabled — Yandex Browser reports an error for TLS 1.0 and TLS 1.1 protocols, users cannot bypass the error.
+- Enabled — administrator sets the valid value (others are ignored) of the SSL and TLS versions, Browser does not use technologies older than the specified version. Users cannot bypass the error.
+
+Support for tls1 and tls1.1 values has been discontinued. Blocking warnings when using TLS 1.0 and TLS 1.1 protocols is not supported.
+
+Example of value:
+tls1.2</string>
+      <string id="SSLVersionMin_TLSv1">TLS 1.0</string>
+      <string id="SSLVersionMin_TLSv1_1">TLS 1.1</string>
+      <string id="SSLVersionMin_TLSv1_2">TLS 1.2</string>
+      <string id="SafeBrowsingExtendedReportingEnabled">Enable transmission of advanced SafeBrowsing reports</string>
+      <string id="SafeBrowsingExtendedReportingEnabled_Explain">SafeBrowsingExtendedReportingEnabled
+
+The policy enables or disables the transmission of advanced Secure Browsing reports. Advanced reports contain system information and page content so that Yandex can recognize dangerous applications and sites.
+
+- Not Configured — users choose in the settings whether to send reports or not.
+- Enabled — reports are sent, users cannot disable this setting.
+- Disabled — reports are not sent.</string>
+      <string id="SafeBrowsingProtectionLevel">SaveBrowsing Protection Level</string>
+      <string id="SafeBrowsingProtectionLevel_Explain">SafeBrowsingProtectionLevel
+
+The policy defines the Safe Browsing mode in the Browser.
+
+- Not Configured, Disabled — Safe Browsing works in standard protection mode, users can change this parameter.
+- Enabled — administrator selects the Safe Browsing protection mode, users cannot change this parameter.
+
+   Protection modes:
+      - standard protection;
+      - improved protection (more browser data is sent to Yandex).</string>
+      <string id="SafeBrowsingProtectionLevel_NoProtection">SafeBrowsing is always disabled</string>
+      <string id="SafeBrowsingProtectionLevel_StandardProtection">SafeBrowsing is enabled in standard protection mode</string>
+      <string id="SafeBrowsingProtectionLevel_EnhancedProtection">SafeBrowsing is enabled in the enhanced protection mode (more data about working in the browser is sent to Yandex)</string>
+      <string id="SavingBrowserHistoryDisabled">Disable saving browser history</string>
+      <string id="SavingBrowserHistoryDisabled_Explain">SavingBrowserHistoryDisabled
+
+The policy prohibits saving browsing history and syncing open tabs.
+
+- Not Configured, Disabled — browsing history is saved, when synchronization is enabled, tabs and the Tableau will sync with the Yandex server, users can import the history from other browsers.
+- Enabled — browsing history is not saved, users cannot disable this option and import history from other browsers.
+Only Tableau can synchronize with the Yandex server.</string>
+      <string id="SidePanelMode">Side panel mode</string>
+      <string id="SidePanelMode_Explain">SidePanelMode
+
+The policy sets the display mode of the sidebar and prohibits users from changing it.
+
+- Not Configured, Disabled — users can choose the display mode in the settings.
+- Enabled — the sidebar settings are disabled, the administrator selects the display mode.
+
+   Sidebar Display Modes:
+     - pin on websites;
+     - pin only to a new tab;
+     - don't show it.</string>
+      <string id="SidePanelMode_Pinned">Side panel is pinned on all sites, also on NTP.</string>
+      <string id="SidePanelMode_PinnedOnNTP">Side panel is pinned only on NTP and hidden on other sites.</string>
+      <string id="SidePanelMode_Hidden">Side panel is hidden.</string>
+      <string id="SitePerProcess">Enable tab isolation for all sites</string>
+      <string id="SitePerProcess_Explain">SitePerProcess
+
+The policy controls the launch of tabs in individual processes.
+
+- Not Configured, Disabled — tabs are run in separate processes, frames are not.
+- Enabled — each tab and frame are run in separate processes.</string>
+      <string id="StatisticsReporting">Send anonymous statistics to Yandex servers</string>
+      <string id="StatisticsReporting_Explain">StatisticsReporting
+
+The policy allows or prohibits sending anonymous statistics to Yandex. The policy only works inside the domain.
+
+- Not Configured — statistics are sent to Yandex, users can disable this parameter.
+- Enabled — statistics are sent to Yandex, users cannot disable this parameter.
+- Disabled — statistics are not sent to Yandex, users cannot enable this parameter.</string>
+      <string id="SyncDisabled">Disable data synchronization with Yandex servers</string>
+      <string id="SyncDisabled_Explain">SyncDisabled
+
+The policy disables data synchronization in Yandex Browser.
+
+- Not Configured, Disabled — users can enable or disable synchronization in the settings.
+- Enabled — users cannot disable synchronization or change its settings.
+
+Note. Do not enable the policy when the YandexDisableID policy is active, which includes the functionality of the SyncDisabled policy.</string>
+      <string id="TabloPreset">Configure the list of sites for Tableau</string>
+      <string id="TabloPreset_Explain">TabloPreset
+
+The policy reserves part of the tiles on the Tableau which users cannot change.
+
+- Not Configured, Disabled — users can change all tiles on the Tableau.
+- Enabled — users cannot change, move or delete tiles set by administrator.
+
+Example of value:
+
+[
+  {
+    "title": "Main corp site",
+    "url": "https://home.corp.org",
+    "background_color": "FF00FF"
+  },
+  {
+    "title": "Example site",
+    "url": "https://example.com",
+    "background_color": "00FF00"
+  }
+]</string>
+      <string id="TranslateEnabled">Enable page-by-page translator</string>
+      <string id="TranslateEnabled_Explain">TranslateEnabled
+
+The policy enables or disables page-by-page translator in Yandex Browser and prohibits users from changing this parameter.
+
+- Not Configured — users decide whether to enable translation.
+- Enabled — the browser offers to translate pages, the translation icon in the SmartBox and the context menu item are displayed.
+- Disabled — page-by-page translation functions are disabled.</string>
+      <string id="URLAllowlist">Set exceptions for URLBlocklist policy</string>
+      <string id="URLAllowlist_Explain">URLAllowlist
+
+The policy sets exceptions for the URLBlocklist  policy and takes precedence over it. It sets up exceptions for specific protocols, subdomains, individual domains, ports, or paths. You can specify no more than 1000 URLs.
+
+- Not Configured, Disabled — there are no exceptions to the URLBlocklist policy.
+- Enabled — administrator sets exceptions for the URLBlocklist policy.
+
+The policy also allows the browser to automatically call external applications registered as handlers of the protocols specified in the list (for example, tel: or ssh:).
+
+After disabling the policy, the previously set URL list is not saved.
+
+Example of the value:
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com
+mailto://*</string>
+      <string id="URLAllowlistDesc">Allow access to the URL list</string>
+      <string id="URLBlocklist">Block access to the URL list</string>
+      <string id="URLBlocklist_Explain">URLBlocklist
+
+The policy blocks the URL from the specified list. You can specify no more than 1000 URLs.
+
+- Not configured, disabled — The browser does not block the URL.
+- Enabled — the administrator sets a list of prohibited URLs.
+
+The policy does not apply to a URL with embedded JavaScript code and dynamically loaded data. For example, if the administrator blocks the address example.com/abc, website example.com will still be able to load the page example.com/abc, using XMLHTTPRequest requests.
+
+After disabling the policy, the previous URL list is not saved.
+
+Example of the value:
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com
+file://*
+custom_scheme:*
+*</string>
+      <string id="URLBlocklistDesc">Block access to the URL list</string>
+      <string id="UpdateAllowed">Allow automatic updates from Yandex servers</string>
+      <string id="UpdateAllowed_Explain">UpdateAllowed
+
+The policy allows or prohibits automatic updates of Yandex Browser.
+
+- Not Configured, Enabled — automatic updates are allowed, users cannot turn them off.
+- Disabled — automatic updates are prohibited.
+
+The policy does not affect browser updates by the network administrator. The administrator can update the browser version at any time by rolling out the update package to the local network.</string>
+      <string id="UseTabGroups">Enable tab groups</string>
+      <string id="UseTabGroups_Explain">UseTabGroups
+
+The policy enables or disables tab groups in Yandex Browser.
+
+- Not Configured, Enabled — tab groups are enabled.
+- Disabled — tab groups are disabled.
+
+After changing the policy value, the browser needs to be restarted.</string>
+      <string id="UserAgentSpoofing">Spoof User-Agent</string>
+      <string id="UserAgentSpoofing_Explain">UserAgentSpoofing
+
+The policy replaces the User-Agent for the specified sites.
+
+- Not Configured, Disabled — the browser does not replace the User-Agent.
+- Enabled — the administrator sets the User-Agent substitution mode.
+
+Substitution modes:
+- default — the product name is substituted in the User-Agent string.
+- full — the User-Agent string is substituted completely.
+
+Code example:
+{
+  "full": {
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64)": [
+      "domain-only.com",
+      ".domain-and-subdomains.com"
+    ]
+  },
+  "default": {
+    "": [
+      ".remove-product-name.com"
+    ],
+    "OPR/34.0.2036.50": [
+      ".replace-product-name.com"
+    ]
+  }
+}</string>
+      <string id="UserDataDir">Specify a folder for user data</string>
+      <string id="UserDataDir_Explain">UserDataDir
+
+Defines the folder where Yandex Browser will store user data.
+
+- Enabled - Yandex Browser will use the specified folder regardless of whether the user has selected the '--user-data-dir' checkbox or not. To avoid data loss or other errors, do not specify the root folder of the volume or the folder used for other purposes, because Yandex Browser will manage its contents.
+- Disabled - Yandex Browser will use the default profile folder, but the user will be able to change it using the '--user-data-dir' parameter.</string>
+      <string id="VideoCaptureAllowed">Enable the video capture function</string>
+      <string id="VideoCaptureAllowed_Explain">VideoCaptureAllowed
+
+Enabling or disabling the video capture function.
+
+- Enabled, Not Configured (default value), access to video capture devices (usually a webcam) must be explicitly confirmed by the user in a special notification, with the exception of URLs included in the VideoCaptureAllowedUrls list (access to them is granted without notification).
+- Disabled - the access request will not appear, and the video recording function will be available only for the resources specified in the VideoCaptureAllowedUrls list.
+
+This policy applies to all video devices, not just the built-in camera.</string>
+      <string id="VideoCaptureAllowedUrls">A list of URLs that are granted access to video recording devices without a request</string>
+      <string id="VideoCaptureAllowedUrls_Explain">VideoCaptureAllowedUrls
+
+Allows you to set a list of URLs for which access to video capture will be provided without prior request from the user.
+You can use masks, for example, "https://[*.]example.ru /" allow video capture for the domain and all its subdomains.</string>
+      <string id="VideoCaptureAllowedUrlsDesc">A list of URLs that are granted access to video recording devices without a request</string>
+      <string id="WebAppStorePolicy">Set a list of web apps available in the store</string>
+      <string id="WebAppStorePolicy_Explain">WebAppStorePolicy
+
+The policy sets the list of web applications available in the store.
+
+- Not Configured, Disabled — all web applications are available in the store.
+- Enabled — administrator sets the path to the file with the list of web applications available in the store.
+
+Example value: https://domain.example/path/to/web_app/config/config.json</string>
+      <string id="WebGalleryRotation">Configure Web Gallery rotation mode</string>
+      <string id="WebGalleryRotation_Explain">WebGalleryRotation
+
+The policy enables or disables Gallery's background daily rotation on a new tab. Users can change this setting.
+
+- Not Configured, Enabled — background rotation is enabled.
+- Disabled — background rotation is disabled.</string>
+      <string id="WelcomeExperiments">Enable welcome pages about experiments</string>
+      <string id="WelcomeExperiments_Explain">WelcomeExperiments
+
+The policy enables or disables the display of welcome educational pages about experimental features when the Browser is launched.
+
+- Not Configured, Enabled — the display of welcome pages is enabled.
+- Disabled — the display of welcome pages is disabled.</string>
+      <string id="WordTranslatorDisabled">Turn off the word-by-word translator</string>
+      <string id="WordTranslatorDisabled_Explain">WordTranslatorDisabled
+
+- Enabled - the word-by-word translator is disabled. 
+- Disabled - the word-by-word translator is enabled. 
+
+In both cases, the user cannot change the specified settings. They are available for modification only if the policy is not set.</string>
+      <string id="YandexAliceMsgDisable">Disable Alice</string>
+      <string id="YandexAliceMsgDisable_Explain">YandexAliceMsgDisable
+
+The policy allows you to disable Alice in the Browser.
+
+- Enabled - all Alice's functions and entry points (for example, in Flute) are disabled.
+- Disabled, Not Configured - the default settings apply.</string>
+      <string id="YandexAntiTracking">Enable and configure antitracking feature</string>
+      <string id="YandexAntiTracking_Explain">YandexAntiTracking
+
+The policy sets up anti-tracking.
+
+- Not Configured, Disabled — antitracking is disabled.
+- Enabled — administrator via ; sets rules for blocking requests and iframe requests, the referer header is removed from all Browser requests.
+
+General syntax rules
+
+- ! — comment, should be the first in the line.
+- * — wildcard-symbol, denotes any symbols in any quantity, including their absence.
+- @@ — indicates exceptions to the whole rule, should be at the beginning of the rule. For example, @@||example.com unblocks requests to http(s)://example.com .
+- ~ — denotes exceptions with respect to parameters. For example, ||example.com ^$removeparam=~login will remove all request parameters to example.com , except login.
+- ^ — the separator character of the address and modifier. For example, ||example.org ^$removeparam will remove any http(s) request parameters://example.org . You can specify a modifier without strictly marking the end of the address, for example, ||example$removeparam=ad will remove the ad parameter for all addresses that start with http(s)://example.
+
+Blocking requests
+
+- || — matches the beginning of the address without specifying the http:// or https:// scheme. For example, ||example.org will block requests to example.org with any query scheme.
+- | — the character of the beginning or end of the address. For example, html| for http: //example.com/index.html or |http: //example.com to block http requests to example.com .
+- ,domain=...[|...] — a parameter for limiting the modifier's action to a list of domains to which the rule will be applied to requests. For example, |https: //example.com ^$third-party,domain=~*.good.com will block all third-party requests to example.com , except for queries with *.good.com .
+
+Blocking request parameters
+
+- $removeparam — modifier, removes parameters from URL requests, sets parameter names. Can be used separately from the address. For example, $removeparam=ad_* will remove parameters by mask ad_* for all requests to any address.
+- If the list is not specified, then all (any) request parameters are deleted. For example, ||example.com ^$removeparam will remove all http(s) request parameters://example
+.com - ,domain=...[|...] — a parameter for limiting the modifier's action to a list of domains to which the rule will be applied to requests. For example, $removeparam,domain=some.com |*.example.com removes all parameters in requests to some.com or *.example.com
+
+Example of rules
+
+$removeparam=utm_ad;$removeparam=utm_affiliate;$removeparam=utm_brand;$removeparam=utm_campaign;$removeparam=utm_campaignid;$removeparam=utm_channel;$removeparam=utm_cid;$removeparam=utm_content;$removeparam=utm_creative;$removeparam=utm_emcid;$removeparam=utm_emmid;$removeparam=utm_id;$removeparam=utm_keyword;$removeparam=utm_medium;$removeparam=utm_name;$removeparam=utm_place;$removeparam=utm_product;$removeparam=utm_pubreferrer;$removeparam=utm_reader;$removeparam=utm_referrer;$removeparam=utm_serial;$removeparam=utm_session;$removeparam=utm_siteid;$removeparam=utm_social;$removeparam=utm_social-type;$removeparam=utm_source;$removeparam=utm_supplier;$removeparam=utm_swu;$removeparam=utm_term;$removeparam=utm_umguk;$removeparam=utm_userid;$removeparam=utm_viz_id;$removeparam=gbraid;$removeparam=wbraid;$removeparam=gclsrc;$removeparam=gclid;$removeparam=usqp</string>
+      <string id="YandexAutoLaunchMode">Enables browser autolaunch on OS start.</string>
+      <string id="YandexAutoLaunchMode_Explain">YandexAutoLaunchMode
+
+The policy configures Yandex Browser autorun when the computer is restarted and prohibits users from changing this parameter in the Browser settings.
+
+- Not Configured — Browser starts automatically after turning on the computer.
+- Enabled — administrator sets the Browser startup mode:
+     - "Always" — Browser starts automatically after turning on the computer.
+     - "If it was opened when the computer was turned off" — Browser automatically starts if it was opened when the computer was turned off.
+     - "Never" — Browser does not start automatically after turning on the computer.
+- Disabled — Browser does not start automatically after turning on the computer.</string>
+      <string id="YandexAutoLaunchMode_Never">Never</string>
+      <string id="YandexAutoLaunchMode_Always">Always</string>
+      <string id="YandexAutoLaunchMode_Restart">After restart</string>
+      <string id="YandexCloudLanguageDetectEnabled">Allow sending text fragments to Yandex to improve the quality of translation</string>
+      <string id="YandexCloudLanguageDetectEnabled_Explain">YandexCloudLanguageDetectEnabled
+
+The policy allows or prohibits sending text fragments to Yandex to improve the quality of translation and prohibits users from changing this parameter.
+
+- Not Configured — users choose in the Browser settings whether to send data.
+- Enabled — data is being sent.
+- Disabled — no data is sent.</string>
+      <string id="YandexCopyShareButton">Show "Copy" and "Share" buttons in the Smartbox</string>
+      <string id="YandexCopyShareButton_Explain">YandexCopyShareButton
+
+The policy sets up the "Copy" and "Share" buttons in the SmartBox.
+
+- Not Configured — the buttons are enabled, users can disable them.
+- Enabled — the buttons are enabled, users cannot disable them.
+- Disabled — the buttons are disabled, users cannot enable them.</string>
+      <string id="YandexDisableBackgroundVideos">Disable background videos when battery is low</string>
+      <string id="YandexDisableBackgroundVideos_Explain">Yandex Disable Background Videos
+
+The policy controls the setting "Disable videophone animation when the battery is low".
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexDisableID">Disable Yandex ID support</string>
+      <string id="YandexDisableID_Explain">YandexDisableID
+
+The policy disables functions related to Yandex ID.
+
+- Not Configured, Disabled — default settings are used.
+- Enabled — the functions associated with Yandex ID are disabled (for example, authorization in the cloud), the SyncDisabled policy becomes active.</string>
+      <string id="YandexDiscardUnusedTabs">Configure uploading of unused tabs from memory</string>
+      <string id="YandexDiscardUnusedTabs_Explain">YandexDiscardUnusedTabs
+
+The policy controls the "Unload unused tabs from memory" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexDisplayOriginalTxt">Configure pop-ups with the original text</string>
+      <string id="YandexDisplayOriginalTxt_Explain">YandexDisplayOriginalTxt
+
+The policy controls the "Display pop-ups with the original text" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexDomainTitleClickOpensHomePage">Open site's homepage when clicking the domain in the SmartBox</string>
+      <string id="YandexDomainTitleClickOpensHomePage_Explain">YandexDomainTitleClickOpensHomePage
+
+The policy controls the setting "Open the main page of the site by clicking on its domain in the SmartBox".
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexDomainTitleFormat">Customize appearance of website address in the SmartBox</string>
+      <string id="YandexDomainTitleFormat_Explain">YandexDomainTitleFormat
+
+The policy adjusts appearance of web address in the SmartBox.
+
+- Not Configured — web address in the SmartBox is displayed as "domain &gt; title". Users can change this setting.
+- Enabled — web address address in the SmartBox is displayed as "domain &gt; title". Users cannot change this setting.
+- Disabled — web address in the SmartBox is displayed as an URL. Users cannot change this setting.</string>
+      <string id="YandexNeutralizeThreatsInBackground">Automatically neutralize threats in background mode</string>
+      <string id="YandexNeutralizeThreatsInBackground_Explain">YandexNeutralizeThreatsInBackground
+
+The policy controls the "Eliminate threats automatically in the background" setting.
+
+- Not Configured — the setting is disabled, users can enable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexOptimizeImages">Optimize images to conserve system memory</string>
+      <string id="YandexOptimizeImages_Explain">YandexOptimizeImages
+
+The policy controls the "Optimize images to conserve system memory" setting.
+
+- Not Configured — the setting is disabled, users can enable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexPhishingProtection">Enable Phishing protection for bank cards</string>
+      <string id="YandexPhishingProtection_Explain">YandexPhishingProtection
+
+The policy controls the "Phishing protection for bank cards" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexPowerSavingEnableAuto">Enable automatically power saving mode</string>
+      <string id="YandexPowerSavingEnableAuto_Explain">YandexPowerSavingEnableAuto
+
+The policy controls the activation of the power saving mode when disconnected from the network.
+
+- Not Configured — the setting is set, users can change it.
+- Enabled — the setting is set, users cannot change it.
+- Disabled — the setting is not set, users cannot change it.</string>
+      <string id="YandexPowerSavingMode">Enable power saving mode automatically when battery is lower than Value.</string>
+      <string id="YandexPowerSavingMode_Explain">YandexPowerSavingMode
+
+The policy sets the condition under which the Browser switches to power saving mode.
+
+- Not Configured — the setting is set, users can change it.
+- Enabled — the administrator selects a condition (battery charge percentage or disconnection from the network), users cannot change it.
+- Disabled — the setting is not set, users cannot change it.</string>
+      <string id="YandexPowerSavingMode_WhenUnplagged">When device is unplugged</string>
+      <string id="YandexPowerSavingMode_Battery_80">When battery have 80% or less</string>
+      <string id="YandexPowerSavingMode_Battery_50">When battery have 50% or less</string>
+      <string id="YandexPowerSavingMode_Battery_20">When battery have 20% or less</string>
+      <string id="YandexPowerSavingModeIcon">Show Power saving mode icon</string>
+      <string id="YandexPowerSavingModeIcon_Explain">YandexPowerSavingModeIcon
+
+The policy controls the display of the Power saving mode icon.
+
+- Not Configured — the icon is shown, users can hide it.
+- Enabled — the icon is shown, users cannot hide it.
+- Disabled — the icon is hidden, users cannot return it.</string>
+      <string id="YandexProtectedMode">Open online banking and payment system in Protected mode</string>
+      <string id="YandexProtectedMode_Explain">YandexProtectedMode
+
+The policy controls the setting "Open pages of online banks and payment systems in Protected mode".
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexReaderModeButton">Show the Reader mode button in SmartBox.</string>
+      <string id="YandexReaderModeButton_Explain">YandexReaderModeButton
+
+The policy configures the Reader mode button in the SmartBox.
+
+- Not Configured — the button is enabled, users can disable it.
+- Enabled — the button is enabled, users cannot disable it.
+- Disabled — the button is disabled, users cannot enable it.</string>
+      <string id="YandexShowWebReviews">Show web reviews</string>
+      <string id="YandexShowWebReviews_Explain">YandexShowWebReviews
+
+The policy controls the "Show site reviews (icon to the left of the address bar)" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexSubtitlesButton">Show the subtitles button on videos</string>
+      <string id="YandexSubtitlesButton_Explain">YandexSubtitlesButton
+
+The policy controls the "Show the subtitle button on video" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexTextToSpeechButton">Configure the Text-To-Speech button in the SmartBox</string>
+      <string id="YandexTextToSpeechButton_Explain">YandexTextToSpeechButton
+
+The policy configures the Text-To-Speech button in the SmartBox.
+
+- Not Configured — the button is enabled, users can disable it.
+- Enabled — the button is enabled, users cannot disable it.
+- Disabled — the button is disabled, users cannot enable it.</string>
+      <string id="YandexTrackingProtectionButton">Show Tracking protection button in the SmartBox.</string>
+      <string id="YandexTrackingProtectionButton_Explain">YandexTrackingProtectionButton
+
+The policy configures the Tracking protection button in the SmartBox.
+
+- Not Configured — the button is enabled, users can disable it.
+- Enabled — the button is enabled, users cannot disable it.
+- Disabled — the button is disabled, users cannot enable it.</string>
+      <string id="YandexTranslateCursor">Translate a word by pointing cursor at it and pressing Shift button</string>
+      <string id="YandexTranslateCursor_Explain">Yandex Translate Cursor
+
+The policy controls the "Translate words by hovering cursor at them and pressing Shift button" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexTranslateImagesButton">Show the Translate image button</string>
+      <string id="YandexTranslateImagesButton_Explain">YandexTranslateImagesButton
+
+The policy controls the "Show image translation button" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexTranslateSelected">Translate selected words and phrases</string>
+      <string id="YandexTranslateSelected_Explain">YandexTranslateSelected
+
+The policy controls the "Translate selected words and phrases" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexTranslateVideosButton">Show the "Translate video" button</string>
+      <string id="YandexTranslateVideosButton_Explain">YandexTranslateVideosButton
+
+The policy controls the "Show translation button on video" setting.
+
+- Not Configured — the setting is enabled, users can disable it.
+- Enabled — the setting is enabled, users cannot disable it.
+- Disabled — the setting is disabled, users cannot enable it.</string>
+      <string id="YandexUserFeedbackMode">Configure data sending in feedback forms</string>
+      <string id="YandexUserFeedbackMode_Explain">YandexUserFeedbackMode
+
+The policy specifies what data should be sent with feedback forms.
+
+- Not Configured, Disabled — all data is sent to Yandex.
+- Enabled — the administrator determines which data will be sent to Yandex:
+   - "Disable" — users cannot fill out feedback forms.
+   - "Send all" —  users can send all data along with a screenshot.
+   - "Send without screenshot" — users can send all data, but without a screenshot.
+   - "Save in archive on the disk" — users can save data with screenshots in the archive on disk to check them later for personal data presence.</string>
+      <string id="YandexUserFeedbackMode_Disabled">Disable</string>
+      <string id="YandexUserFeedbackMode_SendAll">Send all</string>
+      <string id="YandexUserFeedbackMode_SendWithoutScreenshot">Send without screenshot</string>
+      <string id="YandexUserFeedbackMode_SaveLocalArchive">Save in archive on the disk</string>
+      <string id="YandexWebAppInstallButton">Show the Install WebApp button in the SmartBox.</string>
+      <string id="YandexWebAppInstallButton_Explain">YandexWebAppInstallButton
+
+The policy configures the WebApp Install button in the SmartBox.
+
+- Not Configured — the button is enabled, users can disable it.
+- Enabled — the button is enabled, users cannot disable it.
+- Disabled — the button is disabled, users cannot enable it.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="TurboSettings">
+        <dropdownList refId="TurboSettings">Turbo Mode</dropdownList>
+      </presentation>
+      <presentation id="DisabledPlugins">
+        <listBox refId="DisabledPluginsDesc">Desabled plugins</listBox>
+      </presentation>
+      <presentation id="ExtensionInstallBlacklist">
+        <listBox refId="ExtensionInstallBlacklistDesc">Extensions from Blocklist (* means that user cannot install extensions at all)</listBox>
+      </presentation>
+      <presentation id="ExtensionInstallWhitelist">
+        <listBox refId="ExtensionInstallWhitelistDesc">The  Extensions Allowlist</listBox>
+      </presentation>
+      <presentation id="DefaultPluginsSetting">
+        <dropdownList refId="DefaultPluginsSetting">Configure Default Plugins Settings</dropdownList>
+      </presentation>
+      <presentation id="AllowOutdatedPlugins"/>
+      <presentation id="SecureWifiEnabled"/>
+      <presentation id="URLBlacklist">
+        <listBox refId="URLBlacklistDesc">The blocked URLs</listBox>
+      </presentation>
+      <presentation id="URLWhitelist">
+        <listBox refId="URLWhitelistDesc">The permitted URLs</listBox>
+      </presentation>
+      <presentation id="SafeBrowsingEnabled"/>
+      <presentation id="AutoFillEnabled"/>
+      <presentation id="SigninAllowed"/>
+      <presentation id="ProxyMode">
+        <dropdownList refId="ProxyMode">Choose Proxy Mode</dropdownList>
+      </presentation>
+      <presentation id="ProxyServer">
+        <textBox refId="ProxyServer">
+          <label>Proxy server address or URL</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProxyPacUrl">
+        <textBox refId="ProxyPacUrl">
+          <label>URL of the proxy PAC file</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProxyBypassList">
+        <textBox refId="ProxyBypassList">
+          <label>List of rules for ignoring the proxy server</label>
+        </textBox>
+      </presentation>
+      <presentation id="DeveloperToolsDisabled"/>
+      <presentation id="URLIExplorerList">
+        <listBox refId="URLIExplorerListDesc">The URLs automatically opening in IE</listBox>
+      </presentation>
+      <presentation id="URLNonIExplorerList">
+        <listBox refId="URLNonIExplorerListDesc">The URLs automatically not opening in IE</listBox>
+      </presentation>
+      <presentation id="NtpContentDisabled"/>
+      <presentation id="AllowFileSelectionDialogs"/>
+      <presentation id="AlternateErrorPagesEnabled"/>
+      <presentation id="AlternativeBrowserParameters">
+        <listBox refId="AlternativeBrowserParametersDesc">Set command line parameters for another browser</listBox>
+      </presentation>
+      <presentation id="AlternativeBrowserPath">
+        <textBox refId="AlternativeBrowserPath">
+          <label>Set a list of other browsers</label>
+        </textBox>
+      </presentation>
+      <presentation id="AlwaysOpenPdfExternally"/>
+      <presentation id="ApplicationLocaleValue">
+        <textBox refId="ApplicationLocaleValue">
+          <label>Set locale value</label>
+        </textBox>
+      </presentation>
+      <presentation id="AudioCaptureAllowed"/>
+      <presentation id="AudioCaptureAllowedUrls">
+        <listBox refId="AudioCaptureAllowedUrlsDesc">Urls, when audio capture is allowed</listBox>
+      </presentation>
+      <presentation id="AuthNegotiateDelegateAllowlist">
+        <textBox refId="AuthNegotiateDelegateAllowlist">
+          <label>A list of allowed servers for delegating rights over the Kerberos protocol.</label>
+        </textBox>
+      </presentation>
+      <presentation id="AuthSchemes">
+        <textBox refId="AuthSchemes">
+          <label>Set authentication schemes</label>
+        </textBox>
+      </presentation>
+      <presentation id="AuthServerAllowlist">
+        <textBox refId="AuthServerAllowlist">
+          <label>List of servers allowed for SSO authentication</label>
+        </textBox>
+      </presentation>
+      <presentation id="AutoOpenAllowedForURLs">
+        <listBox refId="AutoOpenAllowedForURLsDesc">Set the URL list for the AutoOpenFileTypes policy</listBox>
+      </presentation>
+      <presentation id="AutoOpenFileTypes">
+        <listBox refId="AutoOpenFileTypesDesc">Types of files automatically opening after download</listBox>
+      </presentation>
+      <presentation id="AutoSelectCertificateForUrls">
+        <listBox refId="AutoSelectCertificateForUrlsDesc">Automatically select client certificates for sites</listBox>
+      </presentation>
+      <presentation id="AutofillAddressEnabled"/>
+      <presentation id="AutofillCreditCardEnabled"/>
+      <presentation id="AutoplayAllowed"/>
+      <presentation id="AutoplayAllowlist">
+        <listBox refId="AutoplayAllowlistDesc">Allow video autoplay on the following URLs</listBox>
+      </presentation>
+      <presentation id="BackgroundModeEnabled"/>
+      <presentation id="BasicAuthOverHttpEnabled"/>
+      <presentation id="BlockExternalExtensions"/>
+      <presentation id="BookmarkBarEnabled"/>
+      <presentation id="BrowserSwitcherEnabled"/>
+      <presentation id="BrowserSwitcherUrlList">
+        <listBox refId="BrowserSwitcherUrlListDesc">Specify sites for opening in another browser</listBox>
+      </presentation>
+      <presentation id="BrowsingDataLifetime">
+        <textBox refId="BrowsingDataLifetime">
+          <label>Configure automatic deletion of user data</label>
+        </textBox>
+      </presentation>
+      <presentation id="ClearBrowsingDataOnExitList">
+        <listBox refId="ClearBrowsingDataOnExitListDesc">Specify data to delete after closing the browser</listBox>
+      </presentation>
+      <presentation id="CloudDocumentsDisabled"/>
+      <presentation id="CookiesAllowedForUrls">
+        <listBox refId="CookiesAllowedForUrlsDesc">Allow cookies on the URLs</listBox>
+      </presentation>
+      <presentation id="CookiesBlockedForUrls">
+        <listBox refId="CookiesBlockedForUrlsDesc">Block cookies on the URLs</listBox>
+      </presentation>
+      <presentation id="CookiesSessionOnlyForUrls">
+        <listBox refId="CookiesSessionOnlyForUrlsDesc">Cookies are stored during session only for the Urls</listBox>
+      </presentation>
+      <presentation id="CrashesReporting"/>
+      <presentation id="DefaultBrowserSettingEnabled"/>
+      <presentation id="DefaultCookiesSetting">
+        <dropdownList refId="DefaultCookiesSetting">Configure Default Cookies Settings</dropdownList>
+      </presentation>
+      <presentation id="DefaultGeolocationSetting">
+        <dropdownList refId="DefaultGeolocationSetting">Configure Default Geolocation Setting</dropdownList>
+      </presentation>
+      <presentation id="DefaultJavaScriptSetting">
+        <dropdownList refId="DefaultJavaScriptSetting">Allow or prohibit sites to execute JavaScript</dropdownList>
+      </presentation>
+      <presentation id="DefaultPopupsSetting">
+        <dropdownList refId="DefaultPopupsSetting">Configure Default Popups Setting</dropdownList>
+      </presentation>
+      <presentation id="DefaultWebAppsPolicy">
+        <textBox refId="DefaultWebAppsPolicy">
+          <label>Set default path for a file with pre-installed web applications</label>
+        </textBox>
+      </presentation>
+      <presentation id="DeniedFluteBrowserButtons">
+        <listBox refId="DeniedFluteBrowserButtonsDesc">Disable left panel tools buttons</listBox>
+      </presentation>
+      <presentation id="DeveloperToolsAvailability">
+        <dropdownList refId="DeveloperToolsAvailability">Configure Developer Tools Availability</dropdownList>
+      </presentation>
+      <presentation id="Disable3DAPIs"/>
+      <presentation id="DisableAuthNegotiateCnameLookup"/>
+      <presentation id="DisableSafeBrowsingProceedAnyway"/>
+      <presentation id="DisableScreenshots"/>
+      <presentation id="DiskCacheDir">
+        <textBox refId="DiskCacheDir">
+          <label>Select a cache folder on disk</label>
+        </textBox>
+      </presentation>
+      <presentation id="DiskCacheSize">
+        <decimalTextBox refId="DiskCacheSize">Set the cache size in bytes:</decimalTextBox>
+      </presentation>
+      <presentation id="DistrStatisticsReporting"/>
+      <presentation id="DnscryptDisabled"/>
+      <presentation id="DownloadDirectory">
+        <textBox refId="DownloadDirectory">
+          <label>Set a folder for downloads</label>
+        </textBox>
+      </presentation>
+      <presentation id="DownloadRestrictions">
+        <dropdownList refId="DownloadRestrictions">Download restrictions</dropdownList>
+      </presentation>
+      <presentation id="EditBookmarksEnabled"/>
+      <presentation id="Education"/>
+      <presentation id="ExtensionInstallAllowlist">
+        <listBox refId="ExtensionInstallAllowlistDesc">IDs of Extensions from Allowlist</listBox>
+      </presentation>
+      <presentation id="ExtensionInstallBlocklist">
+        <listBox refId="ExtensionInstallBlocklistDesc">IDs of extensions that are forbidden to install (* means that user cannot install any extension)</listBox>
+      </presentation>
+      <presentation id="ExtensionInstallForcelist">
+        <listBox refId="ExtensionInstallForcelistDesc">Install extension/application IDs and update URLs without user confirmation</listBox>
+      </presentation>
+      <presentation id="ExtensionSettings">
+        <textBox refId="ExtensionSettings">
+          <label>Manage extension settings</label>
+        </textBox>
+      </presentation>
+      <presentation id="FastSignup"/>
+      <presentation id="FullscreenAllowed"/>
+      <presentation id="HardwareAccelerationModeEnabled"/>
+      <presentation id="HomepageLocation">
+        <textBox refId="HomepageLocation">
+          <label>URL of the Home page</label>
+        </textBox>
+      </presentation>
+      <presentation id="ImportBookmarks"/>
+      <presentation id="ImportCookies"/>
+      <presentation id="ImportExtensions"/>
+      <presentation id="ImportHistory"/>
+      <presentation id="ImportLastSession"/>
+      <presentation id="ImportOnFirstRun"/>
+      <presentation id="ImportOther"/>
+      <presentation id="ImportSavedPasswords"/>
+      <presentation id="ImportSearchEngine"/>
+      <presentation id="IncognitoModeAvailability">
+        <dropdownList refId="IncognitoModeAvailability">Configure Incognito Mode Availability</dropdownList>
+      </presentation>
+      <presentation id="InstaserpDisabled"/>
+      <presentation id="ManagedBookmarks">
+        <textBox refId="ManagedBookmarks">
+          <label>Managed Bookmarks</label>
+        </textBox>
+      </presentation>
+      <presentation id="MasterPasswordDisabled"/>
+      <presentation id="NewTabPageLocation">
+        <textBox refId="NewTabPageLocation">
+          <label>Set the URL of the page that opens instead of a new tab or window</label>
+        </textBox>
+      </presentation>
+      <presentation id="NewTabSessionOnStartup"/>
+      <presentation id="NtpAdsDisabled"/>
+      <presentation id="NtpNotificationsDisable"/>
+      <presentation id="NtpWallpaper">
+        <textBox refId="NtpWallpaper">
+          <label>Url for wallpaper image</label>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordManagerBlockedURLs">
+        <listBox refId="PasswordManagerBlockedURLsDesc">Password Manager is blocked on the URLs</listBox>
+      </presentation>
+      <presentation id="PasswordManagerEnabled"/>
+      <presentation id="PasswordProtectionChangePasswordURL">
+        <textBox refId="PasswordProtectionChangePasswordURL">
+          <label>Configure the URL of the password change page</label>
+        </textBox>
+      </presentation>
+      <presentation id="PasswordProtectionLoginURLs">
+        <listBox refId="PasswordProtectionLoginURLsDesc">The corporate URLs where the password protection service should record hashes with salt for passwords</listBox>
+      </presentation>
+      <presentation id="PasswordProtectionWarningTrigger">
+        <dropdownList refId="PasswordProtectionWarningTrigger">Set Password Protection Warning Trigger</dropdownList>
+      </presentation>
+      <presentation id="PopupsAllowedForUrls">
+        <listBox refId="PopupsAllowedForUrlsDesc">Allow pop-ups on the following sites</listBox>
+      </presentation>
+      <presentation id="PopupsBlockedForUrls">
+        <listBox refId="PopupsBlockedForUrlsDesc">Block pop-ups on the following sites</listBox>
+      </presentation>
+      <presentation id="ProxySettings">
+        <textBox refId="ProxySettings">
+          <label>Proxy Server Settings</label>
+        </textBox>
+      </presentation>
+      <presentation id="RefererEnabledOnFaviconRequests"/>
+      <presentation id="RoamingProfileLocation">
+        <textBox refId="RoamingProfileLocation">
+          <label>Specify the folder for the profile to be moved</label>
+        </textBox>
+      </presentation>
+      <presentation id="RoamingProfileSupportEnabled"/>
+      <presentation id="SSLVersionMin">
+        <dropdownList refId="SSLVersionMin">Set minimum SSL version</dropdownList>
+      </presentation>
+      <presentation id="SafeBrowsingExtendedReportingEnabled"/>
+      <presentation id="SafeBrowsingProtectionLevel">
+        <dropdownList refId="SafeBrowsingProtectionLevel">Configure SafeBrowsing Protection Level</dropdownList>
+      </presentation>
+      <presentation id="SavingBrowserHistoryDisabled"/>
+      <presentation id="SidePanelMode">
+        <dropdownList refId="SidePanelMode">Side panel mode</dropdownList>
+      </presentation>
+      <presentation id="SitePerProcess"/>
+      <presentation id="StatisticsReporting"/>
+      <presentation id="SyncDisabled"/>
+      <presentation id="TabloPreset">
+        <textBox refId="TabloPreset">
+          <label>Reserve sites on Tableau</label>
+        </textBox>
+      </presentation>
+      <presentation id="TranslateEnabled"/>
+      <presentation id="URLAllowlist">
+        <listBox refId="URLAllowlistDesc">The permitted URLs</listBox>
+      </presentation>
+      <presentation id="URLBlocklist">
+        <listBox refId="URLBlocklistDesc">The blocked URLs</listBox>
+      </presentation>
+      <presentation id="UpdateAllowed"/>
+      <presentation id="UseTabGroups"/>
+      <presentation id="UserAgentSpoofing">
+        <textBox refId="UserAgentSpoofing">
+          <label>Spoof User-Agent</label>
+        </textBox>
+      </presentation>
+      <presentation id="UserDataDir">
+        <textBox refId="UserDataDir">
+          <label>Specify a folder for user data</label>
+        </textBox>
+      </presentation>
+      <presentation id="VideoCaptureAllowed"/>
+      <presentation id="VideoCaptureAllowedUrls">
+        <listBox refId="VideoCaptureAllowedUrlsDesc">Video Capture is allowed for the URLs</listBox>
+      </presentation>
+      <presentation id="WebAppStorePolicy">
+        <textBox refId="WebAppStorePolicy">
+          <label>Set a list of web apps available in the store</label>
+        </textBox>
+      </presentation>
+      <presentation id="WebGalleryRotation"/>
+      <presentation id="WelcomeExperiments"/>
+      <presentation id="WordTranslatorDisabled"/>
+      <presentation id="YandexAliceMsgDisable"/>
+      <presentation id="YandexAntiTracking">
+        <textBox refId="YandexAntiTracking">
+          <label>Enable and configure antitracking feature.</label>
+        </textBox>
+      </presentation>
+      <presentation id="YandexAutoLaunchMode">
+        <dropdownList refId="YandexAutoLaunchMode">Automatically launch the Browser when the OS starts</dropdownList>
+      </presentation>
+      <presentation id="YandexCloudLanguageDetectEnabled"/>
+      <presentation id="YandexCopyShareButton"/>
+      <presentation id="YandexDisableBackgroundVideos"/>
+      <presentation id="YandexDisableID"/>
+      <presentation id="YandexDiscardUnusedTabs"/>
+      <presentation id="YandexDisplayOriginalTxt"/>
+      <presentation id="YandexDomainTitleClickOpensHomePage"/>
+      <presentation id="YandexDomainTitleFormat"/>
+      <presentation id="YandexNeutralizeThreatsInBackground"/>
+      <presentation id="YandexOptimizeImages"/>
+      <presentation id="YandexPhishingProtection"/>
+      <presentation id="YandexPowerSavingEnableAuto"/>
+      <presentation id="YandexPowerSavingMode">
+        <dropdownList refId="YandexPowerSavingMode">Set the percentage of battery charge at which the Browser switches to Power saving mode</dropdownList>
+      </presentation>
+      <presentation id="YandexPowerSavingModeIcon"/>
+      <presentation id="YandexProtectedMode"/>
+      <presentation id="YandexReaderModeButton"/>
+      <presentation id="YandexShowWebReviews"/>
+      <presentation id="YandexSubtitlesButton"/>
+      <presentation id="YandexTextToSpeechButton"/>
+      <presentation id="YandexTrackingProtectionButton"/>
+      <presentation id="YandexTranslateCursor"/>
+      <presentation id="YandexTranslateImagesButton"/>
+      <presentation id="YandexTranslateSelected"/>
+      <presentation id="YandexTranslateVideosButton"/>
+      <presentation id="YandexUserFeedbackMode">
+        <dropdownList refId="YandexUserFeedbackMode">Configure feedback mode</dropdownList>
+      </presentation>
+      <presentation id="YandexWebAppInstallButton"/>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -28,9 +28,7 @@ Template policy settings in the Group Policy Object Editor.
 mkdir -p %buildroot%_destdir
 cp -a ./* %buildroot%_destdir
 
-[ -d %buildroot%_destdir/en-US ] ||
-    cp -a %buildroot%_destdir/ru-RU %buildroot%_destdir/en-US
-
+[ -d %buildroot%_destdir/en-US ]
 for file in %buildroot%_destdir/*.admx %buildroot%_destdir/*-*/*.adml; do
     if echo "$(basename "$file")" | grep -q "\.admx$"; then
         mv "$file" "$file.utf16"
